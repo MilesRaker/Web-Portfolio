@@ -1,0 +1,16 @@
+.description{
+    padding-left: 4em;
+    margin-bottom: 1em;
+}
+.label{
+    padding-top: 2em;
+    padding-left: 2em;
+    font-weight: bold;
+}
+.heading{
+    padding-left: .5em;
+    padding-top: .5em;
+}
+.container{
+    padding-left: 1em;
+}

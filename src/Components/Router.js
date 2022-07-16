@@ -7,20 +7,23 @@ import { ThemeProvider } from '@mui/material/'
 import Resume from './Resume';
 import Contact from './Contact';
 import Values from './Values';
-import Stack from '@mui/material/Stack';
+import './Router.css';
 
 const Router = () => (
-    <div>
+    <div className="container">
         <ThemeProvider theme={customTheme} >
-            <div >
+            <div className="topBar">
                 <TopBar />
-                <Routes>
-                    <Route path='/' element={<Homepage />} />
-                    <Route path='/resume' element={<Resume />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='/values' element={<Values />} />
+            </div>
+            <div className="routes">
+                <Routes >
+                    <Route className="homepage" path='/' element={<Homepage />} />
+                    <Route className="resume" path='/resume' element={<Resume />} />
+                    <Route className="contact" path='/contact' element={<Contact />} />
+                    <Route className="values" path='/values' element={<Values />} />
                 </Routes>
             </div>
+                
         </ThemeProvider>
     </div>
 )
