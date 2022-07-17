@@ -12,8 +12,8 @@ const customThemeOne = createTheme({
             main: '#42a5f5',
             dark: '#0077c2',
         }
-    },
-    spacing: 4,
+    }
+
 
 })
 

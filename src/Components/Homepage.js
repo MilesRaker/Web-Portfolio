@@ -4,7 +4,7 @@ import './Homepage.css';
 
 function Homepage() {
     return(
-        <div className='conainer'>
+        <div className='homepageConainer'>
             <Typography variant='h2'>
                 Portfolio 
             </Typography>

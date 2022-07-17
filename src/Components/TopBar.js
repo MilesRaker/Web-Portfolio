@@ -1,26 +1,13 @@
-import { AppBar, Tab, Tabs, Toolbar, Typography } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
-import AdjustIcon from '@mui/icons-material/Adjust';
+import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import React, { Component } from 'react';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
 import './TopBar.css';
+import NavTabsVertical from './NavTabsVertical';
+import NavTabsHoriztonal from './NavTabsHorizontal';
 
-function LinkTab(props) {
-    return (
-      <Tab
-        component="a"
-        onClick={(event) => {
-          event.preventDefault();
-        }}
-        {...props}
-      />
-    );
-  }
 
 class TopBar extends Component{ 
-
     
     constructor(props){
         super(props);
@@ -51,70 +38,41 @@ class TopBar extends Component{
         const { windowWidth } = this.state;
         
         const styles = {
-            showFullName: windowWidth > 900,
-            showVerticalTabs: windowWidth < 600
+            showFullName: windowWidth > 975,
+            showVerticalTabs: windowWidth < 725
         }
 
-       /*  const [value, setValue] = React.useState(0); */
-
-/*         const handleChange = (event, newValue) => {
-            setValue(newValue);
-        }; */
-
         return(
-        <React.Fragment>
-            <AppBar position='fixed'>
-                <Toolbar>
+
+            <AppBar position='static' >
+                <Toolbar >
+
                     <Link to='/'>
-                        <img src={Logo} className='logo' height="75" alt='Rocket Idea Logo' />
+                        <img src={Logo} height="75" alt='Rocket Idea Logo' />
                     </Link>
 
-                    {styles.showFullName ? (
-                        <Typography align='left' variant='h1'>Miles Raker</Typography>
-                    ) : (
-                        <Typography align='left' variant='h1'>Raker</Typography>
-                    )}
-                    
-                    <p>{ windowWidth }</p>
-                    
-                    {styles.showVerticalTabs ? (
-                    <Tabs 
-                       /*  value={value}  */
-                        /* onChange={handleChange} */
-                        sx={{ ml: "auto"}}
-                        textColor="secondary"
-                        indicatorColor="secondary"
-                        aria-label="Navigation Tabs"
-                        orientation="vertical"
-                    >
-                        <LinkTab label="Resume" href="/resume"/>
-                        <LinkTab label="Values" href="/values"/>
-                        <LinkTab label="Contact" href="/contact"/>
-
+                    <Container>
+                        {styles.showFullName ? (
+                            <Typography  align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
+                        ) : (
+                            <Typography  align='left' variant='h1'>Raker</Typography>
+                        )}
+                    </Container>
+                
+                    <Container >
+                        {/* <p>{ windowWidth }</p> */}
                         
-                    </Tabs>
-                    ) : (
-                    <Tabs 
-                        sx={{ ml: "auto"}}
-                        textColor="secondary"
-                        indicatorColor="secondary"
-                        aria-label="secondary tabs example"
-                    >
-                        <Link to='/resume'>
-                            <Tab label="Resume" />
-                        </Link>
-                        <Link to='/values'>
-                            <Tab  label="Values" />
-                        </Link>
-                        <Link to='/contact'>
-                            <Tab label="Contact" />
-                        </Link> 
-                    </Tabs>
-                    )}
+                        {styles.showVerticalTabs ? (
+                            <NavTabsVertical />                        
+                        ) : (             
+                            <NavTabsHoriztonal />      
+                        )}
+                    </Container>
 
                 </Toolbar>
             </AppBar>
-        </React.Fragment>)
+
+        )
     }
 }
 
