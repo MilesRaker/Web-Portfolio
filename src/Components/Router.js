@@ -15,12 +15,12 @@ const Router = () => (
             <TopBar />
 
             <div className="routes">
-{/*                 <Routes >
+                <Routes >
                     <Route className="homepage" path='/' element={<Homepage />} />
                     <Route className="resume" path='/resume' element={<Resume />} />
                     <Route className="contact" path='/contact' element={<Contact />} />
                     <Route className="values" path='/values' element={<Values />} />
-                </Routes> */}
+                </Routes>
             </div>
                 
         </ThemeProvider>
