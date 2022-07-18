@@ -4,13 +4,19 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Link } from 'react-router-dom';
 
-export default function NavTabsHoriztonal() {
-  const [value, setValue] = React.useState(0);
+export default function NavTabsHoriztonal(props) {
+  const [value, setValue] = React.useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
+  React.useEffect(() => {
+    if(props.isHomepage){
+      setValue(false);
+    }
+  })
+  
   return (
     <Box sx={{ width: '100%' }}>
       <Tabs value={value} 

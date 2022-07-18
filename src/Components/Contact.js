@@ -1,9 +1,9 @@
 import { Label } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import React from 'react';
+import IsHomepage from './IsHomepage';
 
-
-function Contact(){
+function Contact(props){
     return(
         <div>
             <Typography variant='h1'>Contact Me</Typography>
@@ -15,7 +15,7 @@ function Contact(){
                 <Typography variant='h2'>Email:</Typography>
                 <Typography variant='body1'>MilesRaker@gmail.com</Typography>
             </div>
-
+            <IsHomepage setIsHomepage={props.setIsHomepage} />
         </div>
     )
 }

@@ -1,11 +1,10 @@
 import { AppBar, Container, Toolbar, Typography } from '@mui/material';
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
 import './TopBar.css';
 import NavTabsVertical from './NavTabsVertical';
 import NavTabsHoriztonal from './NavTabsHorizontal';
-
 
 class TopBar extends Component{ 
     
@@ -59,15 +58,14 @@ class TopBar extends Component{
                         )}
                     </Container>
                 
-                    <Container >
-                        {/* <p>{ windowWidth }</p> */}
-                        
+                    <Container >                     
                         {styles.showVerticalTabs ? (
-                            <NavTabsVertical />                        
+                            <NavTabsVertical isHomepage = {this.props.isHomepage} />                        
                         ) : (             
-                            <NavTabsHoriztonal />      
+                            <NavTabsHoriztonal isHomepage = {this.props.isHomepage} />      
                         )}
                     </Container>
+
 
                 </Toolbar>
             </AppBar>
