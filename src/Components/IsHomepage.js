@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /* Determines if rendered page is Homepage */
 /* Lives in each page's lowest branch */

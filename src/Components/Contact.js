@@ -1,4 +1,3 @@
-import { Label } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 import React from 'react';
 import IsHomepage from './IsHomepage';

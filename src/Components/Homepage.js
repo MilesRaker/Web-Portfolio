@@ -1,6 +1,5 @@
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Homepage.css';
 import IsHomepage from './IsHomepage';
 
@@ -25,7 +24,7 @@ function Homepage(props) {
                 This website serves as both a web portfolio and an example of my web design abilities. This website 
                 has been created using React, React-Router, and Material-UI. Source code can be found on github:
             </Typography>
-                <a href="https://github.com/MilesRaker/web-portfolio" target="_blank">Source Code</a>
+                <a href="https://github.com/MilesRaker/web-portfolio" target="_blank" rel="noopener">Source Code</a>
             <IsHomepage setIsHomepage={props.setIsHomepage}/>
         </Stack>
     )

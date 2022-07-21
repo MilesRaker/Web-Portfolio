@@ -2,11 +2,11 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Link, useLocation } from 'react-router-dom';
+import { Links } from 'react-router-dom';
 
 export default function NavTabsVertical(props) {
   const [value, setValue] = React.useState(false);
-  const [pathname, setPathname] = React.useState(window.location.pathname);
+  // const [pathname, setPathname] = React.useState(window.location.pathname);
   /* if window.location.pathname == '/' then false */
   /* if window.location.pathname == 'resume' then 0 */
   /* if window.location.pathname == 'values' then 1 */
@@ -14,7 +14,7 @@ export default function NavTabsVertical(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    setPathname(window.location.pathname)
+    // setPathname(window.location.pathname)
   };
 
   React.useEffect(() => {
