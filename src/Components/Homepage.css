@@ -1,3 +1,5 @@
-.homepageConainer{
-    display:flex;
+.homepageContainer{
+    display: flex;
+    max-width: 1440;
+    margin-top: 1em;
 }

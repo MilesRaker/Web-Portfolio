@@ -6,7 +6,7 @@ import IsHomepage from './IsHomepage';
 
 function Homepage(props) {
     return(
-        <Stack className='homepageConainer'>
+        <Stack className='homepageContainer'>
             <Typography variant='h2'>
                 Portfolio 
             </Typography>
