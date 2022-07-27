@@ -60,9 +60,9 @@ class TopBar extends Component{
                 
                     <Container >                     
                         {styles.showVerticalTabs ? (
-                            <NavTabsVertical isHomepage = {this.props.isHomepage} />                        
+                            <NavTabsVertical />                        
                         ) : (             
-                            <NavTabsHoriztonal isHomepage = {this.props.isHomepage} />      
+                            <NavTabsHoriztonal />      
                         )}
                     </Container>
 
