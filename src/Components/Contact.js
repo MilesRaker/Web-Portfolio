@@ -1,6 +1,5 @@
 import { Typography } from '@mui/material';
 import React from 'react';
-import IsHomepage from './IsHomepage';
 
 function Contact(props){
     return(
@@ -14,7 +13,6 @@ function Contact(props){
                 <Typography variant='h2'>Email:</Typography>
                 <Typography variant='body1'>MilesRaker@gmail.com</Typography>
             </div>
-            <IsHomepage setIsHomepage={props.setIsHomepage} />
         </div>
     )
 }

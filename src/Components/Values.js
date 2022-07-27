@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import './Values.css';
-import IsHomepage from './IsHomepage';
 
 function Values(props){
     return(
@@ -90,7 +89,6 @@ function Values(props){
                 </AccordionDetails>  
             </Accordion>
 
-            <IsHomepage setIsHomepage={props.setIsHomepage}  />
         </div>
     )
 }

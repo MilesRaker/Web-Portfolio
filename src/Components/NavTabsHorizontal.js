@@ -1,26 +1,39 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export default function NavTabsHoriztonal(props) {
+export default function NavTabsHoriztonal() {
+      // if on the homepage, do not focus a tab
+    // otherwise, focus on current tab
+  const location = useLocation();
+
   const [value, setValue] = React.useState(false);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  React.useEffect(() => {
-    if(props.isHomepage){
-      setValue(false);
+  useEffect(() => {
+    switch(location.pathname){
+      case '/':
+        setValue(false);
+        break;
+      case '/resume':
+        setValue(0);
+        break;
+      case '/values':
+        setValue(1);
+        break;
+      case '/contact':
+        setValue(2);
+        break;
+      default :
+        setValue(false);
+        break;
     }
-  })
+  },[location])
   
   return (
     <Box sx={{ width: '100%' }}>
       <Tabs value={value} 
-      onChange={handleChange} 
       aria-label="nav tabs"
       orientation="horizontal"
       textColor="secondary"

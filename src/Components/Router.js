@@ -9,28 +9,24 @@ import Contact from './Contact';
 import Values from './Values';
 import './Router.css';
 
-function Router (){
-    const [isHomepage, setIsHomepage] = React.useState(false);
+export default function Router (){
 
     return(
-    <Container className="container" maxWidth="false">
-        <ThemeProvider theme={customTheme} >
-            <TopBar isHomepage={isHomepage} /> 
+        <Container className="container" maxWidth="false">
+            <ThemeProvider theme={customTheme} >
+                <TopBar /> 
 
-            <div className="routes">
-                <Routes >
-                    <Route className="homepage" path='/' element={<Homepage setIsHomepage={setIsHomepage}/>} />
-                    <Route className="resume" path='/resume' element={<Resume setIsHomepage={setIsHomepage}/>} />
-                    <Route className="contact" path='/contact' element={<Contact setIsHomepage={setIsHomepage}/>} />
-                    <Route className="values" path='/values' element={<Values setIsHomepage={setIsHomepage}/>} />
-                </Routes>
-            </div>
+                <div className="routes">
+                    <Routes >
+                        <Route className="homepage" path='/' element={<Homepage />} />
+                        <Route className="resume" path='/resume' element={<Resume />} />
+                        <Route className="contact" path='/contact' element={<Contact />} />
+                        <Route className="values" path='/values' element={<Values />} />
+                    </Routes>
+                </div>
 
-        </ThemeProvider>
-    </Container>
-)
+            </ThemeProvider>
+        </Container>
+    )
     
 }
-
-
-export default Router;
