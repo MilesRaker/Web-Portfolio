@@ -5,8 +5,8 @@ import customTheme from './ThemeProvider';
 import TopBar from './TopBar';
 import { Container, ThemeProvider } from '@mui/material/'
 import Resume from './Resume';
-import Contact from './Contact';
 import Values from './Values';
+import Projects from './Projects';
 
 export default function Router (){
 
@@ -19,7 +19,7 @@ export default function Router (){
                     <Routes >
                         <Route className="homepage" path='/' element={<Homepage />} />
                         <Route className="resume" path='/resume' element={<Resume />} />
-                        <Route className="contact" path='/contact' element={<Contact />} />
+                        <Route className="projects" path='/projects' element={<Projects />} />
                         <Route className="values" path='/values' element={<Values />} />
                     </Routes>
                 </div>

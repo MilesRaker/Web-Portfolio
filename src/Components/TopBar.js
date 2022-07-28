@@ -59,7 +59,7 @@ class TopBar extends Component{
                         </Container>
                         <Container>
                         {styles.showFullName ? (
-                            <Typography align='left' sx={{pl: 4}} noWrap='true' variant='subtitle1'>
+                            <Typography align='left' sx={{pl: 2}} noWrap='true' variant='subtitle1'>
                                 MilesRaker@gmail.com | (360) 606-8381
                             </Typography>
                             ) : (

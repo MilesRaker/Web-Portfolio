@@ -22,7 +22,7 @@ export default function NavTabsHoriztonal() {
       case '/values':
         setValue(1);
         break;
-      case '/contact':
+      case '/projects':
         setValue(2);
         break;
       default :
@@ -41,7 +41,7 @@ export default function NavTabsHoriztonal() {
       >
         <Tab label="Resume" key="Resume" component={Link} to={"/resume"} />
         <Tab label="Values" key="Values" component={Link} to={"/values"} />
-        <Tab label="Contact" key="Contact" component={Link} to={"/contact"} />
+        <Tab label="Projects" key="Projects" component={Link} to={"/projects"} />
       </Tabs>
     </Box>
   );

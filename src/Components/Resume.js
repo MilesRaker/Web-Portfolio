@@ -1,14 +1,11 @@
 import React from 'react';
 import ResumeImg from './images/ResumeImg.png';
-import { Container } from '@mui/system';
+import './Resume.css';
 
-function Resume(){
-// todo: dynamically resize resume image
+export default function Resume(){
     return(
-        <Container className="resumeContainer">
+        <div className="resumeContainer">
             <img src={ResumeImg} className="resumeImage" alt="Resume"/>
-        </Container>
+        </div>
     )
 }
-
-export default Resume;

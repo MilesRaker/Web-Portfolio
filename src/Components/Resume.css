@@ -1,0 +1,9 @@
+.resumeContainer{
+    display: flex;
+    width: 100%;
+}
+
+.resumeImage{
+    align-self: flex-start;
+    width: 100%;
+}
