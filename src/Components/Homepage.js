@@ -2,7 +2,7 @@ import { Stack, Typography } from '@mui/material';
 import React from 'react';
 import './Homepage.css';
 
-function Homepage(props) {
+function Homepage() {
     return(
         <Stack className='homepageContainer'>
             <Typography variant='h2'>

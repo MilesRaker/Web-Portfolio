@@ -7,7 +7,6 @@ import { Container, ThemeProvider } from '@mui/material/'
 import Resume from './Resume';
 import Contact from './Contact';
 import Values from './Values';
-import './Router.css';
 
 export default function Router (){
 

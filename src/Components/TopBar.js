@@ -2,14 +2,12 @@ import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
-import './TopBar.css';
 import NavTabsVertical from './NavTabsVertical';
 import NavTabsHoriztonal from './NavTabsHorizontal';
 
 class TopBar extends Component{ 
     
-    constructor(props){
-        super(props);
+    constructor(){
         this.state = {
             windowWidth: 0,
             windowHeight: 0

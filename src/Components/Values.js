@@ -4,9 +4,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
-import './Values.css';
 
-function Values(props){
+function Values(){
     return(
         <div className='container'>
             <Typography variant='h2' className='heading'>Values</Typography>
