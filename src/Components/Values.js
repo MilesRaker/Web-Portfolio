@@ -4,17 +4,16 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
+import './Values.css';
 
-function Values(){
+export default function Values(){
     return(
-        <div className='container'>
-            <Typography variant='h2' className='heading'>Values</Typography>
+        <div className='valuesContainer'>
+            <Typography variant='h2' className='valuesHeading'>Values</Typography>
 
             <Accordion className='values'>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Authentic</Typography>
                 </AccordionSummary>
@@ -26,8 +25,6 @@ function Values(){
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Curious</Typography>
                 </AccordionSummary>
@@ -39,8 +36,6 @@ function Values(){
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Kind</Typography>
                 </AccordionSummary>
@@ -52,8 +47,6 @@ function Values(){
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Loyal</Typography>
                 </AccordionSummary>
@@ -65,8 +58,6 @@ function Values(){
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Playful</Typography>
                 </AccordionSummary>
@@ -78,8 +69,6 @@ function Values(){
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
-                    aria-controls='panel1a-content'
-                    id='panel1a-header'
                 >
                     <Typography variant='overline' className='label'>Self-confident</Typography>
                 </AccordionSummary>
@@ -91,5 +80,3 @@ function Values(){
         </div>
     )
 }
-
-export default Values;

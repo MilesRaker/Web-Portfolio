@@ -3,14 +3,15 @@
     margin-bottom: 1em;
 }
 .label{
-    padding-top: 2em;
-    padding-left: 2em;
+
+    padding-left: 1em;
     font-weight: bold;
 }
-.heading{
+.valuesHeading{
     padding-left: .5em;
     padding-top: .5em;
 }
-.container{
+.valuesContainer{
     padding-left: 1em;
+    max-width: 800px;
 }
