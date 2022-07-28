@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
+import { AppBar, Container, Stack, Toolbar, Typography } from '@mui/material';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
@@ -7,7 +7,8 @@ import NavTabsHoriztonal from './NavTabsHorizontal';
 
 class TopBar extends Component{ 
     
-    constructor(){
+    constructor(props){
+        super(props);
         this.state = {
             windowWidth: 0,
             windowHeight: 0
@@ -48,13 +49,33 @@ class TopBar extends Component{
                         <img src={Logo} height="75" alt='Rocket Idea Logo' />
                     </Link>
 
-                    <Container>
+                    <Stack>
+                        <Container>
+                            {styles.showFullName ? (
+                                <Typography  align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
+                            ) : (
+                                <Typography  align='left' variant='h1'>Raker</Typography>
+                            )}
+                        </Container>
+                        <Container>
                         {styles.showFullName ? (
-                            <Typography  align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
-                        ) : (
-                            <Typography  align='left' variant='h1'>Raker</Typography>
-                        )}
-                    </Container>
+                            <Typography align='left' sx={{pl: 4}} noWrap='true' variant='subtitle1'>
+                                MilesRaker@gmail.com | (360) 606-8381
+                            </Typography>
+                            ) : (
+                            <Container>
+                                <Typography align='center'  noWrap='true' variant='subtitle1'>
+                                    MilesRaker@gmail.com
+                                </Typography>
+                                <Typography align='center'  noWrap='true' variant='subtitle1'>
+                                    (360) 606-8381
+                                </Typography>
+                            </Container>
+                            )}
+                        </Container>
+
+                    </Stack>
+                    
                 
                     <Container >                     
                         {styles.showVerticalTabs ? (
