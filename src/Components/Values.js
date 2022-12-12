@@ -5,20 +5,52 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import './Values.css';
+import customThemeOne from "./ThemeProvider";
+
+const accordionTitle = {
+    fontFamily: 'Varela',
+    fontWeight: 'bold',
+    paddingLeft: 1,
+    textDecoration: 'underline',
+    textDecorationColor: customThemeOne.palette.secondary.main
+}
+
+const accordionSubtitle = {
+    fontFamily: 'Varela',
+    fontStyle: 'italic',
+    color: 'black',
+    paddingLeft: 1
+}
+
+const accordionSx = {
+    background: 'linear-gradient(to bottom, #FAFAFA, #42A5F5)',
+    margin: 1,
+    borderRadius: 1
+}
+
+const ColorRule = ({ color }) => (
+    <hr
+        style = {{
+            borderColor: color,
+        }}
+        />
+);
+
+
 
 export default function Values(){
     return(
         <div className='valuesContainer'>
-            <Typography variant='h2' className='valuesHeading'>Values</Typography>
+            <Typography variant='h2'  className='valuesHeading'>Values</Typography>
 
             <Accordion className='values'>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Authentic</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Authentic</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant='body1' className='description'>Being my true self</Typography>
+                <AccordionDetails sx={accordionSx}>
+                    <Typography variant='body1' sx={accordionSubtitle}>I present my true self to the world. I speak my truth.</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -26,10 +58,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Curious</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Curious</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant='body1' className='description'>Viewing the world with wonder</Typography>
+                <AccordionDetails sx={accordionSx}>
+                    <Typography variant='body1' className='description'>I view the world through eager wonder</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -37,10 +69,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Kind</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Kind</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant='body1' className='description'>Friendly, generous and considerate</Typography>
+                <AccordionDetails sx={accordionSx}>
+                    <Typography variant='body1' className='description'>I am friendly, generous and considerate</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -48,10 +80,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Loyal</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Empathetic</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant='body1' className='description'>Trusting my team</Typography>
+                <AccordionDetails sx={accordionSx}>
+                    <Typography variant='body1' className='description'>I acknowledge the emotions of others without actively experiencing their emotions</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -59,10 +91,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Playful</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Playful</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
-                    <Typography variant='body1' className='description'>Giving and expressing pleasure, goofy</Typography>
+                <AccordionDetails sx={accordionSx}>
+                    <Typography variant='body1' className='description'>I give and express joy, I'm a goofball</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -70,9 +102,9 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='overline' className='label'>Self-confident</Typography>
+                    <Typography variant='overline' sx={accordionTitle}>Self-confident</Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails sx={accordionSx}>
                     <Typography variant='body1' className='description'>I can learn anything I need to be successful</Typography>
                 </AccordionDetails>  
             </Accordion>
