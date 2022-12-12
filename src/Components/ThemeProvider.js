@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material/styles';
 
-const customThemeOne = createTheme({
+const customTheme = createTheme({
     palette: {
         primary: {
             light: '#80d6ff',
@@ -52,4 +52,4 @@ const customThemeOne = createTheme({
 
 })
 
-export default customThemeOne;
+export default customTheme;

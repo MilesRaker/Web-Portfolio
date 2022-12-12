@@ -26,7 +26,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionDetails from "@mui/material/AccordionDetails";
-import customThemeOne from "./ThemeProvider";
+import customTheme from "./ThemeProvider";
 
 
 const frameworks = ["React","Spring","UWP"]
@@ -38,7 +38,7 @@ const api = ["jQuery", "Bootstrap", "Material UI", "ReactRouter", "Thymeleaf"]
 const sectionHeadings = {
     fontFamily: 'Varela',
     textDecoration: 'underline',
-    textDecorationColor: customThemeOne.palette.secondary.main,
+    textDecorationColor: customTheme.palette.secondary.main,
     fontWeight: 'bold',
     paddingLeft: 2,
     paddingY: 1
@@ -53,17 +53,17 @@ const accordionTitle = {
 const accordionSubtitle = {
     fontFamily: 'Varela',
     fontStyle: 'italic',
-    color: customThemeOne.palette.secondary.light,
+    color: customTheme.palette.secondary.light,
     paddingLeft: 1
 }
 
 const accordionSx = {
-    bgcolor: customThemeOne.palette.primary.main,
+    bgcolor: customTheme.palette.primary.main,
     margin: 1
 }
 
 const clearanceSx = {
-    bgcolor: customThemeOne.palette.primary.main,
+    bgcolor: customTheme.palette.primary.main,
     margin: 1,
     padding: 1
 }
@@ -75,7 +75,7 @@ const contactSx = {
 }
 
 const scrollSx ={
-    backgroundColor: customThemeOne.palette.primary.light,
+    backgroundColor: customTheme.palette.primary.light,
     color: 'black',
     fontFamily: 'Varela',
     marginY: .5,
@@ -83,7 +83,7 @@ const scrollSx ={
 }
 
 const scrollHeaderSx = {
-    backgroundColor: customThemeOne.palette.primary.main,
+    backgroundColor: customTheme.palette.primary.main,
     marginTop: 0,
     paddingTop: 0,
     marginBottom: 1,
@@ -91,13 +91,13 @@ const scrollHeaderSx = {
     fontFamily: 'Quattrocento Sans',
     fontWeight: 'bold',
     textDecoration: 'underline',
-    textDecorationColor: customThemeOne.palette.secondary.main
+    textDecorationColor: customTheme.palette.secondary.main
 }
 
 const leftColumnStyle = {
     borderRadius: 1,
     mt: 2,
-    backgroundColor: customThemeOne.palette.primary.light
+    backgroundColor: customTheme.palette.primary.light
 }
 
 
@@ -168,11 +168,11 @@ export default function Resume(props){
                 <Grid xs={12}>
                     <Typography variant={"h4"} sx={sectionHeadings}>Technical Skills</Typography>
 
-                    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: customThemeOne.palette.primary.light }}>
+                    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: customTheme.palette.primary.light }}>
                         <List sx={{
                             width: '100%',
                             maxWidth: 360,
-                            bgcolor: customThemeOne.palette.primary.light,
+                            bgcolor: customTheme.palette.primary.light,
                             position: 'relative',
                             overflow: 'auto',
                             maxHeight: 275,

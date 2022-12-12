@@ -5,14 +5,14 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import './Values.css';
-import customThemeOne from "./ThemeProvider";
+import customTheme from "./ThemeProvider";
 
 const accordionTitle = {
     fontFamily: 'Varela',
     fontWeight: 'bold',
     paddingLeft: 1,
     textDecoration: 'underline',
-    textDecorationColor: customThemeOne.palette.secondary.main
+    textDecorationColor: customTheme.palette.secondary.main
 }
 
 const accordionSubtitle = {

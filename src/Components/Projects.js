@@ -1,12 +1,12 @@
 import {Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Grid} from '@mui/material';
 import React from 'react';
-import customThemeOne from "./ThemeProvider";
+import customTheme from "./ThemeProvider";
 // import PortfolioPreview from "src/images/ReactPortfolio.jpg";
 
 const headerSx = {
     fontFamily: 'Quattrocento Sans',
     textDecoration: 'underline',
-    textDecorationColor: customThemeOne.palette.secondary.main,
+    textDecorationColor: customTheme.palette.secondary.main,
 }
 
 

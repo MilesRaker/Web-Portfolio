@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
 import NavTabsVertical from './NavTabsVertical';
 import NavTabsHoriztonal from './NavTabsHorizontal';
-import customThemeOne from "./ThemeProvider";
+import customTheme from "./ThemeProvider";
 
 class TopBar extends Component{
     
@@ -43,7 +43,7 @@ class TopBar extends Component{
 
         return(
 
-            <AppBar position='sticky' sx={{backgroundColor: customThemeOne.palette.grey.main}}>
+            <AppBar position='sticky' sx={{backgroundColor: customTheme.palette.grey.main}}>
                 <Toolbar >
 
                     <Link to='/'>
@@ -53,9 +53,9 @@ class TopBar extends Component{
                     <Stack>
                         <Container>
                             {styles.showFullName ? (
-                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customThemeOne.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
+                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
                             ) : (
-                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customThemeOne.palette.secondary.main}} align='left' variant='h1'>Raker</Typography>
+                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' variant='h1'>Raker</Typography>
                             )}
                         </Container>
                         <Container>
