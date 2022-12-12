@@ -1,6 +1,6 @@
 import {Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Grid} from '@mui/material';
 import React from 'react';
-import PortfolioPreview from "/Users/milesraker/IdeaProjects/web-portfolio/src/images/ReactPortfolio.jpg";
+// import PortfolioPreview from "src/images/ReactPortfolio.jpg";
 
 export default function Projects() {
 
@@ -23,7 +23,7 @@ export default function Projects() {
                         <CardMedia
                             component="img"
                             alt={"React Portfolio"}
-                            image={PortfolioPreview}
+                            image={}
                             style={{height: 180, maxWidth:'100%'}}/>
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">Portfolio Website</Typography>
