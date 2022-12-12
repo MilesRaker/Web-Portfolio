@@ -23,14 +23,12 @@ export default function Router (){
     return(
         <Container className="container" maxWidth="false">
             <ThemeProvider theme={customTheme} >
-                <TopBar /> 
-
                 <div className="routes">
                     <Routes >
                         <Route className="homepage" path='/' element={<Homepage />} />
-                        <Route className="resume" path='/resume' element={<Resume />} />
-                        <Route className="projects" path='/projects' element={<Projects />} />
-                        <Route className="values" path='/values' element={<Values />} />
+                        <Route className="resume" path='/resume' element={<div><TopBar/><Resume/></div>} />
+                        <Route className="projects" path='/projects' element={<div><TopBar/><Projects /></div>} />
+                        <Route className="values" path='/values' element={<div><TopBar/><Values /></div>} />
                     </Routes>
                 </div>
 
