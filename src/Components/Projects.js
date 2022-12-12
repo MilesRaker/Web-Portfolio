@@ -1,6 +1,6 @@
 import {Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Grid} from '@mui/material';
 import React from 'react';
-import PortfolioPreview from "/Users/milesraker/IdeaProjects/web-portfolio/src/Components/images/ReactPortfolio.jpg";
+import PortfolioPreview from "/Users/milesraker/IdeaProjects/web-portfolio/src/images/ReactPortfolio.jpg";
 
 export default function Projects() {
 
@@ -14,7 +14,7 @@ export default function Projects() {
     return (
         <Container>
             <Typography>
-                Projects page under construction.
+
             </Typography>
             <Grid xs={12}>
                 <h2>Development Projects</h2>

@@ -5,11 +5,9 @@ import './Homepage.css';
 function Homepage() {
     return(
         <Stack className='homepageContainer'>
-            <Typography variant='h2'>
-                Portfolio 
-            </Typography>
-            <Typography variant='h5' color="secondary">
-            Software Engineer | Electronics Engineer | Musician
+
+            <Typography variant='h5' color="primary">
+            Full Stack Web Developer
             </Typography>
             <Typography>I develop satisfying human-computer interaction. Authentic and curious full stack web designer intent on building the future of humanity through code. Coding became my passion in electrical engineering school, which led to a series of coding boot camps and starting my career as a software engineer.</Typography>
             <Typography variant='body1'>I am driven and constantly inspired by the power of human connection. 
