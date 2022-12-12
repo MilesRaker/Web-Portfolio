@@ -1,6 +1,6 @@
 import {Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Grid} from '@mui/material';
 import React from 'react';
-import PortfolioPreview from "/Users/milesraker/IdeaProjects/web-portfolio/src/images/ReactPortfolio.jpg";
+import PortfolioPreview from "src/images/ReactPortfolio.jpg";
 
 export default function Projects() {
 
