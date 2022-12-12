@@ -75,16 +75,20 @@ const contactSx = {
 }
 
 const scrollSx ={
-    bgcolor: customThemeOne.palette.primary.light,
+    backgroundColor: customThemeOne.palette.primary.light,
     color: 'black',
-    margin: .5,
+    fontFamily: 'Varela',
+    marginY: .5,
     borderRadius: 1
 }
 
 const scrollHeaderSx = {
-    bgcolor: customThemeOne.palette.primary.main,
-    margin: 1,
+    backgroundColor: customThemeOne.palette.primary.main,
+    marginTop: 0,
+    paddingTop: 0,
+    marginBottom: 1,
     borderRadius: 1,
+    fontFamily: 'Quattrocento Sans',
     fontWeight: 'bold',
     textDecoration: 'underline',
     textDecorationColor: customThemeOne.palette.secondary.main
@@ -103,9 +107,7 @@ const leftColumnStyle = {
 function renderRow(skill) {
     return (
         <ListItem style={scrollSx} key={skill} component="div"  divider={true}>
-            <ListItemButton>
-                <ListItemText primary={skill}/>
-            </ListItemButton>
+            <ListItemText primary={skill} sx={{paddingLeft: 2}}/>
         </ListItem>
     )
 }
@@ -173,8 +175,9 @@ export default function Resume(props){
                             bgcolor: customThemeOne.palette.primary.light,
                             position: 'relative',
                             overflow: 'auto',
-                            maxHeight: 300,
+                            maxHeight: 275,
                             '& ul': { padding: 0 },
+                            paddingTop: 0,
                         }}>
                             <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}  >Frameworks:</Typography></ListSubheader>
                             {renderRows(frameworks)}
