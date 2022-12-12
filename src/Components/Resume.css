@@ -1,9 +1,31 @@
+:root{
+    --primary-color: #FAFAFA;
+    --secondary-color: #EF955E;
+    --accent-color: #42A5F5;
+}
+
 .resumeContainer{
     display: flex;
     width: 100%;
 }
+#resumeHeader{
+    display: block;
+}
+.centeredText{
+    text-align: center;
+}
+.block{
+    display: block;
+}
 
-.resumeImage{
-    align-self: flex-start;
-    width: 100%;
+.inline{
+    display: inline;
+}
+
+.blueText{
+    color: blue;
+}
+
+.boxShadow{
+    box-shadow: 10px 10px 5px ;
 }

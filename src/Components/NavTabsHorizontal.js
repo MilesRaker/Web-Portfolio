@@ -36,12 +36,12 @@ export default function NavTabsHoriztonal() {
       <Tabs value={value} 
       aria-label="nav tabs"
       orientation="horizontal"
-      textColor="secondary"
+      textColor="primary"
       indicatorColor="secondary"
       >
-        <Tab label="Resume" key="Resume" component={Link} to={"/resume"} />
-        <Tab label="Values" key="Values" component={Link} to={"/values"} />
-        <Tab label="Projects" key="Projects" component={Link} to={"/projects"} />
+        <Tab sx={{fontFamily: 'Varela', fontWeight: 'bold'}} label="Resume" key="Resume" component={Link} to={"/resume"} />
+        <Tab sx={{fontFamily: 'Varela', fontWeight: 'bold'}} label="Values" key="Values" component={Link} to={"/values"} />
+        <Tab sx={{fontFamily: 'Varela', fontWeight: 'bold'}} label="Projects" key="Projects" component={Link} to={"/projects"} />
       </Tabs>
     </Box>
   );

@@ -7,8 +7,18 @@ import { Container, ThemeProvider } from '@mui/material/'
 import Resume from './Resume';
 import Values from './Values';
 import Projects from './Projects';
+import WebFont from 'webfontloader';
+import {useEffect} from "react";
 
 export default function Router (){
+    /** load Google fonts into project from CDN using WebFont api */
+    useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['Quattrocento Sans', 'Varela']
+            }
+        });
+    }, []);
 
     return(
         <Container className="container" maxWidth="false">

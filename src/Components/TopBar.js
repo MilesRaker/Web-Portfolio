@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
 import NavTabsVertical from './NavTabsVertical';
 import NavTabsHoriztonal from './NavTabsHorizontal';
+import customThemeOne from "./ThemeProvider";
 
-class TopBar extends Component{ 
+class TopBar extends Component{
     
     constructor(props){
         super(props);
@@ -42,7 +43,7 @@ class TopBar extends Component{
 
         return(
 
-            <AppBar position='static' >
+            <AppBar position='sticky' sx={{backgroundColor: customThemeOne.palette.grey.main}}>
                 <Toolbar >
 
                     <Link to='/'>
@@ -52,14 +53,14 @@ class TopBar extends Component{
                     <Stack>
                         <Container>
                             {styles.showFullName ? (
-                                <Typography  align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
+                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customThemeOne.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
                             ) : (
-                                <Typography  align='left' variant='h1'>Raker</Typography>
+                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customThemeOne.palette.secondary.main}} align='left' variant='h1'>Raker</Typography>
                             )}
                         </Container>
                         <Container>
                         {styles.showFullName ? (
-                            <Typography align='left' sx={{pl: 2}} noWrap='true' variant='subtitle1'>
+                            <Typography align='left' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
                                 MilesRaker@gmail.com | (360) 606-8381
                             </Typography>
                             ) : (
