@@ -20,11 +20,11 @@ export default function Projects() {
                 <h2>Development Projects</h2>
                 <Grid xs={12} m={6} l={4}>
                     <Card>
-                        <CardMedia
+{/*                        <CardMedia
                             component="img"
                             alt={"React Portfolio"}
                             image={}
-                            style={{height: 180, maxWidth:'100%'}}/>
+                            style={{height: 180, maxWidth:'100%'}}/>*/}
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="div">Portfolio Website</Typography>
                             <Typography variant="body2" color="text.secondary">
