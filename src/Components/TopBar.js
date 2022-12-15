@@ -37,8 +37,10 @@ class TopBar extends Component{
         const { windowWidth } = this.state;
         
         const styles = {
-            showFullName: (windowWidth > 850),
-            showVerticalTabs: (windowWidth < 975)
+            showFullName: windowWidth > 850,
+            showVerticalTabs: windowWidth <= 975 && windowWidth > 515,
+            showHorizontalTabs: windowWidth > 975,
+            showHorizontalTabsBelow: windowWidth <= 515
         }
 
         return(
@@ -74,16 +76,13 @@ class TopBar extends Component{
                             </Container>
                             )}
                         </Container>
-
+                        {styles.showHorizontalTabsBelow ? <NavTabsHoriztonal /> : null}
                     </Stack>
                     
                 
                     <Container >                     
-                        {styles.showVerticalTabs ? (
-                            <NavTabsVertical />                        
-                        ) : (             
-                            <NavTabsHoriztonal />      
-                        )}
+                        {styles.showVerticalTabs ? <NavTabsVertical /> : null }
+                        {styles.showHorizontalTabs ? <NavTabsHoriztonal /> : null }
                     </Container>
 
 
