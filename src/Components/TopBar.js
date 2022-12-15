@@ -7,7 +7,8 @@ import NavTabsHoriztonal from './NavTabsHorizontal';
 import customTheme from "./ThemeProvider";
 
 class TopBar extends Component{
-    
+
+    // working with window size in a React class
     constructor(props){
         super(props);
         this.state = {
@@ -34,18 +35,19 @@ class TopBar extends Component{
     }
 
     render(){
-        const { windowWidth } = this.state;
+        const { windowWidth, windowHeight } = this.state;
         
         const styles = {
             showFullName: windowWidth > 850,
             showVerticalTabs: windowWidth <= 975 && windowWidth > 515,
             showHorizontalTabs: windowWidth > 975,
-            showHorizontalTabsBelow: windowWidth <= 515
+            showHorizontalTabsBelow: windowWidth <= 515,
+            stickyPosition: windowHeight > 650
         }
 
         return(
 
-            <AppBar position='sticky' sx={{backgroundColor: customTheme.palette.grey.A200}}>
+            <AppBar position={styles.stickyPosition?'sticky':'relative'} sx={{backgroundColor: customTheme.palette.grey.A200}}>
                 <Toolbar >
 
                     <Link to='/'>
@@ -75,6 +77,8 @@ class TopBar extends Component{
                                 </Typography>
                             </Container>
                             )}
+                            <Typography>Window Width: {windowWidth}</Typography>
+                            <Typography>Window Height: {windowHeight}</Typography>
                         </Container>
                         {styles.showHorizontalTabsBelow ? <NavTabsHoriztonal /> : null}
                     </Stack>

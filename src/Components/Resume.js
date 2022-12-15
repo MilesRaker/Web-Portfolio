@@ -6,11 +6,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { FaGithubSquare } from "react-icons/fa";
 import { TfiWorld } from "react-icons/tfi";
 import {
-    Button,
     Card,
-    CardActions,
-    CardContent,
-    CardMedia,
     Divider,
     Grid,
     List,
@@ -19,15 +15,13 @@ import {
 } from "@mui/material";
 import Box from '@mui/material/Box';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { FixedSizeList } from 'react-window';
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import AccordionDetails from "@mui/material/AccordionDetails";
 import customTheme from "./ThemeProvider";
-
+import useWindowDimensions from "./useWindowDimensions";
 
 const frameworks = ["React","Spring","UWP"]
 const languages = ["JavaScript","Java SE","Java EE(Servlets, JSP)", "SQL", "C#", "Python"]
@@ -133,6 +127,8 @@ export default function Resume(props){
 
         return <a href={`mailto:${email}${params}`}>{children}</a>;
     };
+
+    const { height, width } = useWindowDimensions();
 
     return(
         <Grid container spacing={2} className="resumeContainer" sx={{ margin: 0 }}>
