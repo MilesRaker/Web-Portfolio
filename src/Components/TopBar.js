@@ -47,12 +47,14 @@ class TopBar extends Component{
 
         return(
 
-            <AppBar position={styles.stickyPosition?'sticky':'relative'} sx={{backgroundColor: customTheme.palette.grey.A200}}>
+            <AppBar position={styles.stickyPosition?'sticky':'relative'} sx={{backgroundColor: customTheme.palette.grey.A200, minWidth: 300}}>
                 <Toolbar >
 
+                    {styles.showHorizontalTabsBelow?null : (
                     <Link to='/'>
                         <img src={Logo} height="75" alt='Rocket Idea Logo' />
                     </Link>
+                    )}
 
                     <Stack>
                         <Container>
