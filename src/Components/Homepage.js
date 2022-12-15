@@ -11,7 +11,7 @@ import NavTabsVertical from "./NavTabsVertical";
 
 function Homepage() {
     const [ nameHover, setNameHover] = useState(false);
-    const [ titleHover, setTitleHover] = useState(false);
+    const [ titleHover, setTitleHover] = useState(true);
 
     const { height, width } = useWindowDimensions();
     const nameSx = {
@@ -20,14 +20,14 @@ function Homepage() {
     const nameHoverSx = {
         display: 'block',
         textDecoration: 'underline',
-        textDecorationColor: customTheme.palette.secondary.main
+        textDecorationColor: customTheme.palette.secondary.main,
     }
 
     const titleSx = {
         display: 'block',
         fontFamily: 'Varela',
         color: customTheme.palette.primary.main,
-
+        mx: 'auto',
     }
 
     const titleHoverSx = {
@@ -35,7 +35,8 @@ function Homepage() {
         fontFamily: 'Varela',
         color: customTheme.palette.primary.main,
         textDecoration: 'underline',
-        textDecorationColor: customTheme.palette.secondary.main
+        textDecorationColor: customTheme.palette.secondary.main,
+        mx: 'auto',
     }
     const navTabSx = {
         display: 'flex',
@@ -46,14 +47,23 @@ function Homepage() {
         backgroundImage: `radial-gradient(#42A5F5, #FAFAFA)`
     }
     const paperSx = {
-        width: width,
         height: height,
         backgroundColor: customTheme.palette.grey.A700,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center'
     }
+
     const xyCenter = {
+        display:'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '90%',
+        width: '90%',
+        margin: 'auto'
+    }
+
+    const xyCenterVertical = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -65,9 +75,36 @@ function Homepage() {
     }
 
     function titleIsHover(){
-        return titleHover? titleSx:titleHoverSx;
+        return titleHover? titleHoverSx:titleSx;
     }
-
+if(width < 800){
+    return(
+        <Paper sx={paperSx}>
+            <Card style={xyCenter}>
+                <div>
+                    <div>
+                    <Typography onMouseEnter={() => setNameHover(true)}
+                                onMouseLeave={() => setNameHover(false)}
+                                sx={nameIsHover}
+                                variant={'h1'}
+                                id={'name'}
+                                align={'center'}>Miles Raker</Typography>
+                    </div>
+                    <div style={xyCenter}>
+                        <Typography sx={titleIsHover}
+                                    variant={'h6'}
+                                    id={'title'}
+                                    onMouseEnter ={() => setTitleHover(false)}
+                                    onMouseLeave={() => setTitleHover(true)}
+                                    align={'center'}>
+                                    Full Stack Web Developer
+                        </Typography>
+                    </div>
+                    <NavTabsHoriztonal sx={navTabSx}/>
+                </div>
+            </Card>
+        </Paper>
+    )} else {
     return(
         <Paper sx={paperSx}>
             <Card style={xyCenter}>
@@ -76,17 +113,23 @@ function Homepage() {
                                 onMouseLeave={() => setNameHover(false)}
                                 sx={nameIsHover}
                                 variant={'h1'}
-                    id={'name'}>Miles Raker</Typography>
+                                id={'name'}
+                                align={'center'}>Miles Raker</Typography>
                 </div>
                 <div style={xyCenter}><Typography sx={titleIsHover}
                                                   variant={'h6'}
                                                   id={'title'}
                                                   onMouseEnter ={() => setTitleHover(false)}
-                                                  onMouseLeave={() => setTitleHover(true)}>Full Stack Web Developer</Typography></div>
-                <NavTabsHoriztonal sx={navTabSx}/>
+                                                  onMouseLeave={() => setTitleHover(true)}>Full Stack Web Developer</Typography>
+                </div>
+                <div style={xyCenterVertical}>
+                    <NavTabsHoriztonal sx={navTabSx}/>
+                </div>
+
             </Card>
         </Paper>
     )
+}
 }
 
 export default Homepage;

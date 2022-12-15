@@ -38,6 +38,7 @@ export default function NavTabsHoriztonal() {
       orientation="horizontal"
       textColor="primary"
       indicatorColor="secondary"
+      centered={true}
       >
         <Tab sx={{fontFamily: 'Varela', fontWeight: 'bold'}} label="Resume" key="Resume" component={Link} to={"/resume"} />
         <Tab sx={{fontFamily: 'Varela', fontWeight: 'bold'}} label="Values" key="Values" component={Link} to={"/values"} />
