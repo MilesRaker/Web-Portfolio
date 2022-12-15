@@ -77,8 +77,9 @@ class TopBar extends Component{
                                 </Typography>
                             </Container>
                             )}
+                            {/* use these two lines to debug responsiveness
                             <Typography>Window Width: {windowWidth}</Typography>
-                            <Typography>Window Height: {windowHeight}</Typography>
+                            <Typography>Window Height: {windowHeight}</Typography>*/}
                         </Container>
                         {styles.showHorizontalTabsBelow ? <NavTabsHoriztonal /> : null}
                     </Stack>
