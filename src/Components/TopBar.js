@@ -37,13 +37,13 @@ class TopBar extends Component{
         const { windowWidth } = this.state;
         
         const styles = {
-            showFullName: windowWidth > 975,
-            showVerticalTabs: windowWidth < 725
+            showFullName: (windowWidth > 850),
+            showVerticalTabs: (windowWidth < 975)
         }
 
         return(
 
-            <AppBar position='sticky' sx={{backgroundColor: customTheme.palette.grey.main}}>
+            <AppBar position='sticky' sx={{backgroundColor: customTheme.palette.grey.A200}}>
                 <Toolbar >
 
                     <Link to='/'>
