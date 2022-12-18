@@ -1,4 +1,14 @@
-import {Typography, Container, Card, CardMedia, CardContent, CardActions, Button, Grid} from '@mui/material';
+import {
+    Typography,
+    Container,
+    Card,
+    CardMedia,
+    CardContent,
+    CardActions,
+    Button,
+    Grid,
+    ButtonGroup
+} from '@mui/material';
 import React from 'react';
 import customTheme from "./ThemeProvider";
 // import PortfolioPreview from "src/images/ReactPortfolio.jpg";
@@ -11,8 +21,13 @@ const headerSx = {
 
 
 export default function Projects() {
+    const buttonSx = {
+        color: "black", background: "light-blue", width: 125
+    }
 
-
+    const buttonGroupSx = {
+        ml:3, mb:1
+    }
 
     const openWebpageInNewTab = url => {
         window.open(url, '_blank', 'noopener,noreferrer');
@@ -39,8 +54,10 @@ export default function Projects() {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" sx={{color: "black", background: "light-blue"}} variant={"contained"} onClick={() => openWebpageInNewTab('www.milesraker.com')}>Portfolio Homepage</Button>
-                            <Button size="small" sx={{color: "black", background: "light-blue"}} variant={"contained"} onClick={() => openWebpageInNewTab('https://github.com/MilesRaker/web-portfolio')}>View on GitHub</Button>
+                            <ButtonGroup variant="contained" aria-label="outlined primary button group" sx={buttonGroupSx}>
+                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('www.milesraker.com')}>Portfolio Homepage</Button>
+                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('https://github.com/MilesRaker/web-portfolio')}>View on GitHub</Button>
+                            </ButtonGroup>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -53,14 +70,14 @@ export default function Projects() {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size="small" sx={{color: "black", background: "light-blue"}} variant={"contained"} onClick={() => openWebpageInNewTab('https://main.d2g2jzmwau9k9y.amplifyapp.com/')}>View Project Live</Button>
-                            <Button size="small" sx={{color: "black", background: "light-blue"}} variant={"contained"} onClick={() => openWebpageInNewTab('https://github.com/MilesRaker/CodeUpPortfolio')}>View on GitHub</Button>
+                            <ButtonGroup variant="contained" aria-label="outlined primary button group" sx={buttonGroupSx}>
+                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('https://main.d2g2jzmwau9k9y.amplifyapp.com/')}>View Project Live</Button>
+                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('https://github.com/MilesRaker/CodeUpPortfolio')}>View on GitHub</Button>
+                            </ButtonGroup>
                         </CardActions>
                     </Card>
                 </Grid>
-
-
-                </Grid>
+            </Grid>
         </Container>
     );
 
