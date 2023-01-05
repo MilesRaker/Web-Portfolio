@@ -25,14 +25,16 @@ class TopBar extends Component{
 
     componentWillUnmount(){
         window.removeEventListener("resize", this.updateDimensions);
-    }
+    };
 
     updateDimensions() {
         let windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
         let windowHeight = typeof window !== "undefined" ? window.innerHeight : 0;
 
         this.setState({ windowWidth, windowHeight })
-    }
+    };
+
+
 
     render(){
         const { windowWidth, windowHeight } = this.state;
@@ -67,12 +69,12 @@ class TopBar extends Component{
                         <Container>
                         {styles.showFullName ? (
                             <Typography align='left' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
-                                MilesRaker@gmail.com | (360) 606-8381
+                                <a href={"mailto:milesraker@gmail.com"}>MilesRaker@gmail.com</a> | (360) 606-8381
                             </Typography>
                             ) : (
                             <Container>
                                 <Typography align='center'  noWrap='true' variant='subtitle1'>
-                                    MilesRaker@gmail.com
+                                    <a href={"mailto:milesraker@gmail.com"}>MilesRaker@gmail.com</a>
                                 </Typography>
                                 <Typography align='center'  noWrap='true' variant='subtitle1'>
                                     (360) 606-8381
