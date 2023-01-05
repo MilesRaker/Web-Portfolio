@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
 import NavTabsVertical from './NavTabsVertical';
-import NavTabsHoriztonal from './NavTabsHorizontal';
+import NavTabsHorizontal from './NavTabsHorizontal';
 import customTheme from "./ThemeProvider";
 
 class TopBar extends Component{
@@ -83,13 +83,13 @@ class TopBar extends Component{
                             <Typography>Window Width: {windowWidth}</Typography>
                             <Typography>Window Height: {windowHeight}</Typography>*/}
                         </Container>
-                        {styles.showHorizontalTabsBelow ? <NavTabsHoriztonal /> : null}
+                        {styles.showHorizontalTabsBelow ? <NavTabsHorizontal /> : null}
                     </Stack>
                     
                 
                     <Container >                     
                         {styles.showVerticalTabs ? <NavTabsVertical /> : null }
-                        {styles.showHorizontalTabs ? <NavTabsHoriztonal /> : null }
+                        {styles.showHorizontalTabs ? <NavTabsHorizontal /> : null }
                     </Container>
 
 

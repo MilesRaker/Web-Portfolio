@@ -1,7 +1,7 @@
 import {Card, Paper, Stack, Typography} from '@mui/material';
 import React, {useState} from 'react';
 import './Homepage.css';
-import NavTabsHoriztonal from "./NavTabsHorizontal";
+import NavTabsHorizontal from "./NavTabsHorizontal";
 import useWindowDimensions from "./useWindowDimensions";
 import customTheme from "./ThemeProvider";
 import NavTabsVertical from "./NavTabsVertical";
@@ -16,18 +16,22 @@ function Homepage() {
     const { height, width } = useWindowDimensions();
     const nameSx = {
         display: 'block',
-    }
-    const nameHoverSx = {
-        display: 'block',
         textDecoration: 'underline',
         textDecorationColor: customTheme.palette.secondary.main,
+        fontFamily: 'Varela',
+        fontWeight: 'bold'
     }
 
-    const titleSx = {
-        display: 'block',
-        fontFamily: 'Varela',
-        color: customTheme.palette.primary.main,
-        mx: 'auto',
+
+    const hoverNavTabSx = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '90%',
+        width: '90%',
+        textDecoration: 'underline',
+        textDecorationColor: customTheme.palette.secondary.main,
+        boxShadow: 1
     }
 
     const titleHoverSx = {
@@ -44,7 +48,6 @@ function Homepage() {
         justifyContent: 'center',
         height: '90%',
         width: '90%',
-        backgroundImage: `radial-gradient(#42A5F5, #FAFAFA)`
     }
     const paperSx = {
         height: height,
@@ -70,66 +73,35 @@ function Homepage() {
         height: '90%',
         width: '90%',
     }
-    function nameIsHover(){
-        return nameHover? nameHoverSx:nameSx;
-    }
 
-    function titleIsHover(){
-        return titleHover? titleHoverSx:titleSx;
-    }
-if(width < 800){
+
     return(
         <Paper sx={paperSx}>
             <Card style={xyCenter}>
                 <div>
                     <div>
-                    <Typography onMouseEnter={() => setNameHover(true)}
-                                onMouseLeave={() => setNameHover(false)}
-                                sx={nameIsHover}
-                                variant={'h1'}
-                                id={'name'}
-                                align={'center'}>Miles Raker</Typography>
+                    <Typography
+                        sx={nameSx}
+                        variant={'h1'}
+                        id={'name'}
+                        align={'center'}>
+                            Miles Raker
+                    </Typography>
                     </div>
                     <div style={xyCenter}>
-                        <Typography sx={titleIsHover}
-                                    variant={'h6'}
-                                    id={'title'}
-                                    onMouseEnter ={() => setTitleHover(false)}
-                                    onMouseLeave={() => setTitleHover(true)}
-                                    align={'center'}>
-                                    Full Stack Web Developer
+                        <Typography
+                        sx={nameSx}
+                        variant={'h6'}
+                        id={'title'}
+                        align={'center'}>
+                            Full Stack Web Developer
                         </Typography>
                     </div>
-                    <NavTabsHoriztonal sx={navTabSx}/>
+                    <NavTabsHorizontal sx={hoverNavTabSx}/>
                 </div>
-            </Card>
-        </Paper>
-    )} else {
-    return(
-        <Paper sx={paperSx}>
-            <Card style={xyCenter}>
-                <div style={xyCenter}>
-                    <Typography onMouseEnter={() => setNameHover(true)}
-                                onMouseLeave={() => setNameHover(false)}
-                                sx={nameIsHover}
-                                variant={'h1'}
-                                id={'name'}
-                                align={'center'}>Miles Raker</Typography>
-                </div>
-                <div style={xyCenter}><Typography sx={titleIsHover}
-                                                  variant={'h6'}
-                                                  id={'title'}
-                                                  onMouseEnter ={() => setTitleHover(false)}
-                                                  onMouseLeave={() => setTitleHover(true)}>Full Stack Web Developer</Typography>
-                </div>
-                <div style={xyCenterVertical}>
-                    <NavTabsHoriztonal sx={navTabSx}/>
-                </div>
-
             </Card>
         </Paper>
     )
-}
 }
 
 export default Homepage;
