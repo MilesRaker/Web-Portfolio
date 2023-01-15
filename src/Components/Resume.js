@@ -29,70 +29,8 @@ const knowledge = ["Object-Oriented Programming","Test-Driven Development","Vers
 const api = ["jQuery", "Bootstrap", "Material UI", "ReactRouter", "Thymeleaf"]
 
 
-const sectionHeadings = {
-    fontFamily: 'Varela',
-    textDecoration: 'underline',
-    textDecorationColor: customTheme.palette.secondary.main,
-    fontWeight: 'bold',
-    paddingLeft: 2,
-    paddingY: 1
-};
 
-const accordionTitle = {
-    fontFamily: 'Varela',
-    fontWeight: 'bold',
-    paddingLeft: 1
-}
 
-const accordionSubtitle = {
-    fontFamily: 'Varela',
-    fontStyle: 'italic',
-    color: customTheme.palette.secondary.light,
-    paddingLeft: 1
-}
-
-const accordionSx = {
-    bgcolor: customTheme.palette.primary.main,
-    margin: 1
-}
-
-const clearanceSx = {
-    bgcolor: customTheme.palette.primary.main,
-    margin: 1,
-    padding: 1
-}
-
-const contactSx = {
-    fontFamily: 'Varela',
-    marginLeft: 1,
-    marginY: .5
-}
-
-const scrollSx ={
-    backgroundColor: customTheme.palette.primary.light,
-    color: 'black',
-    fontFamily: 'Varela',
-    marginY: .5,
-    borderRadius: 1
-}
-
-const scrollHeaderSx = {
-    backgroundColor: customTheme.palette.primary.main,
-    marginTop: 0,
-    paddingTop: 0,
-    marginBottom: 1,
-    borderRadius: 1,
-    fontFamily: 'Quattrocento Sans',
-    fontWeight: 'bold',
-    textDecoration: 'underline',
-    textDecorationColor: customTheme.palette.secondary.main
-}
-
-const leftColumnStyle = {
-    borderRadius: 1,
-    mt: 2,
-    backgroundColor: customTheme.palette.primary.light
-}
 
 
 /** Render a single skill List Item
@@ -100,8 +38,8 @@ const leftColumnStyle = {
  * @return JSX.Element*/
 function renderRow(skill) {
     return (
-        <ListItem style={scrollSx} key={skill} component="div"  divider={true}>
-            <ListItemText primary={skill} sx={{paddingLeft: 2}}/>
+        <ListItem className="scroll-sx" key={skill} component="div"  divider={true}>
+            <ListItemText className="accordion-sx" primary={skill} />
         </ListItem>
     )
 }
@@ -132,116 +70,173 @@ export default function Resume(props){
 
     if(width > 790){
     return(
-        <Grid container spacing={2} className="resumeContainer" sx={{ margin: 0 }}>
-            <Grid container xs={4} spacing={2} id={"resumeLeftColumn"} sx={leftColumnStyle}>
+        <Grid container spacing={2} className="resumeContainer" sx={{ m: 0 }}>
+            <Grid container xs={4} spacing={2} id={"resumeLeftColumn"} className="left-column-style">
                 <Grid item xs={12} id={"resumeContact"}>
-                    <Typography variant={'h4'} sx={sectionHeadings}>Contact</Typography>
+                    <Typography variant={'h4'} className="sectionHeadings">Contact</Typography>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={contactSx} id={"resumeContactPhone"} className="block">
+                    <Card className="text-box">
+                        <Typography className="accordion-title block" id={"resumeContactPhone"} >
                             <FaPhoneSquare/> (360)606-8381
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactEmail"} className="block">
+                        <Typography className="accordion-title block" id={"resumeContactEmail"} >
                             <MdEmail/> <Mailto email={"MilesRaker@gmail.com"} subject={"Portfolio Response"} body={"Dear Miles,\n\n\n<sent from web portfolio link>"}>MilesRaker@gmail.com</Mailto>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactLinkedIn"} className="block">
+                        <Typography className="accordion-title block" id={"resumeContactLinkedIn"} >
                             <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} target={"_blank"} rel={"noreferrer"}>LinkedIn / MilesRaker</a>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactGitHub"} className="block">
+                        <Typography className="accordion-title block" id={"resumeContactGitHub"} >
                             <FaGithubSquare/> <a href="https://github.com/MilesRaker" target={"_blank"} rel={"noreferrer"}>GitHub / MilesRaker</a>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactWebsite"} className="block">
+                        <Typography className="accordion-title block" id={"resumeContactWebsite"} >
                             <TfiWorld/> <a href="https://www.MilesRaker.com" target={"_blank"} rel={"noreferrer"}>MilesRaker.com</a>
                         </Typography>
                     </Card>
                 </Grid>
                 <Divider />
-                <Grid id={"clearance"} xs={12} >
-                    <Typography variant={"h4"} sx={sectionHeadings}>Security Clearance</Typography>
-                    <Card sx={clearanceSx}>
-                        <Typography sx={accordionTitle}>US Government Secret Security Clearance, Inactive</Typography>
+                <Grid item id={"clearance"} xs={12} >
+                    <Typography variant={"h4"} className="sectionHeadings">Security Clearance</Typography>
+                    <Card className="text-box">
+                        <Typography className="accordion-title">US Government Secret Security Clearance, Inactive</Typography>
                     </Card>
                 </Grid>
-                <Grid xs={12}>
-                    <Typography variant={"h4"} sx={sectionHeadings}>Technical Skills</Typography>
+                <Grid item xs={12}>
+                    <Typography variant={"h4"} className="sectionHeadings">Technical Skills</Typography>
 
-                    <Box sx={{ width: '100%', maxWidth: 360, bgcolor: customTheme.palette.primary.light }}>
-                        <List sx={{
-                            width: '100%',
-                            maxWidth: 360,
-                            bgcolor: customTheme.palette.primary.light,
-                            position: 'relative',
-                            overflow: 'auto',
-                            maxHeight: 275,
-                            '& ul': { padding: 0 },
-                            paddingTop: 0,
-                        }}>
-                            <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}  >Frameworks:</Typography></ListSubheader>
-                            {renderRows(frameworks)}
-                            <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>Programming Languages: </Typography></ListSubheader>
-                            {renderRows(languages)}
-                            <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>Knowledge: </Typography></ListSubheader>
-                            {renderRows(knowledge)}
-                            <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>API's: </Typography></ListSubheader>
-                            {renderRows(api)}
-                        </List>
-                    </Box>
+                    <Accordion className="accordion-sx" id={"frameworkAccordion"}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                          aria-controls={"frameworks"}
+                                          id={"frameworkSummary"}>
+                            <div>
+                                <Typography className="accordion-title">Frameworks</Typography>
+                            </div>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ul>
+                                <li>React</li>
+                                <li>Spring</li>
+                                <li>Universal Windows Platform</li>
+                            </ul>
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion className="accordion-sx" id={"languagesAccordion"}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                          aria-controls={"languages"}
+                                          id={"languagesSummary"}>
+                            <div>
+                                <Typography className="accordion-title">Languages</Typography>
+                            </div>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ul>
+                                <li>JavaScript</li>
+                                <li>Java SE</li>
+                                <li>Java EE (servlets, JSP)</li>
+                                <li>SQL</li>
+                                <li>C#</li>
+                                <li>Python</li>
+                            </ul>
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion className="accordion-sx" id={"knowledgeAccordion"}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                          aria-controls={"knowledge"}
+                                          id={"knowledgeSummary"}>
+                            <div>
+                                <Typography className="accordion-title">Knowledge</Typography>
+                            </div>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ul>
+                                <li>Object-Oriented Programming</li>
+                                <li>Test-Driven Development</li>
+                                <li>Version Control with Git</li>
+                                <li>Paired Programming</li>
+                                <li>Azure</li>
+                                <li>AWS</li>
+                                <li>Agile</li>
+                                <li>JSX</li>
+                                <li>MySQL</li>
+                                <li>Public Speaking</li>
+                            </ul>
+                        </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion className="accordion-sx" id={"apiAccordion"}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                          aria-controls={"api"}
+                                          id={"apiSummary"}>
+                            <div>
+                                <Typography className="accordion-title">APIs</Typography>
+                            </div>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <ul>
+                                <li>jQuery</li>
+                                <li>Bootstrap</li>
+                                <li>Material UI</li>
+                                <li>ReactRouter</li>
+                                <li>Thymeleaf</li>
+                            </ul>
+                        </AccordionDetails>
+                    </Accordion>
+
                 </Grid>
-                <Divider />
 
-                <Divider />
-                <Grid id={"certifications"} xs={12} >
-                    <Typography variant={"h4"} sx={sectionHeadings}>Certifications</Typography>
+                <Grid item id={"certifications"} xs={12} >
+                    <Typography variant={"h4"} className="sectionHeadings">Certifications</Typography>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>AWS Cloud Practitioner</Typography>
-                        <Typography sx={accordionSubtitle}>Amazon Web Services</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">AWS Cloud Practitioner</Typography>
+                        <Typography className="accordion-subtitle">Amazon Web Services</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>Azure Fundamentals</Typography>
-                        <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">Azure Fundamentals</Typography>
+                        <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>Azure Data Fundamentals</Typography>
-                        <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">Azure Data Fundamentals</Typography>
+                        <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>Azure AI Fundamentals</Typography>
-                        <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">Azure AI Fundamentals</Typography>
+                        <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>Linux Essentials</Typography>
-                        <Typography sx={accordionSubtitle}>Linux Professional Institute</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">Linux Essentials</Typography>
+                        <Typography className="accordion-subtitle">Linux Professional Institute</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>CompTIA ITF+:</Typography>
-                        <Typography sx={accordionSubtitle}>CompTIA</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">CompTIA ITF+:</Typography>
+                        <Typography className="accordion-subtitle">CompTIA</Typography>
                     </Card>
 
-                    <Card sx={accordionSx}>
-                        <Typography sx={accordionTitle}>Electrical Engineer in Training</Typography>
-                        <Typography sx={accordionSubtitle}>Washington State License Board</Typography>
+                    <Card className="accordion-sx">
+                        <Typography className="accordion-title">Electrical Engineer in Training</Typography>
+                        <Typography className="accordion-subtitle">Washington State License Board</Typography>
                     </Card>
 
                 </Grid>
             </Grid>
-            <Divider />
-            <Grid container spacing={1} xs={8} id={"resumeRightColumn"} sx={{ ml: 1, mr: 0, my: 0 }}>
-                <Grid xs={12}  id={"professionalExperience"}>
-                    <Typography variant={"h4"} sx={sectionHeadings}>Professional Experience</Typography>
 
-                    <Accordion sx={accordionSx} id={"SMUInternship"}>
+            <Grid container spacing={2} xs={8} id={"resumeRightColumn"} sx={{ m: 0}}>
+                <Grid item xs={12}  id={"professionalExperience"}>
+                    <Typography variant={"h4"} className="sectionHeadings">Professional Experience</Typography>
+
+                    <Accordion className="accordion-sx" id={"SMUInternship"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"smuInternship"}
                                           id={"smuInternship"}>
                             <div>
-                                <Typography sx={accordionTitle}>Saint Martin's University - Lacey, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
+                                <Typography className="accordion-title">Saint Martin's University - Lacey, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -253,13 +248,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"FAA"}>
+                    <Accordion className="accordion-sx" id={"FAA"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"FAA"}
                                           id={"FAASummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>Federal Aviation Administration - Des Moines, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
+                                <Typography className="accordion-title">Federal Aviation Administration - Des Moines, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -274,13 +269,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"WANG"}>
+                    <Accordion className="accordion-sx" id={"WANG"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"WANG"}
                                           id={"WANGSummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>US Army National Guard - Camp Murray, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
+                                <Typography className="accordion-title">US Army National Guard - Camp Murray, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -301,13 +296,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"Army"}>
+                    <Accordion className="accordion-sx" id={"Army"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"Army"}
                                           id={"ArmySummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>US Army - Seoul, South Korea; Newport News, VA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
+                                <Typography className="accordion-title">US Army - Seoul, South Korea; Newport News, VA</Typography>
+                                <Typography className="accordion-subtitle"><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -323,17 +318,17 @@ export default function Resume(props){
                     </Accordion>
                 </Grid>
 
-                <Grid id={"education"} xs={12}>
-                    <Typography variant={"h4"} sx={sectionHeadings}>Education</Typography>
-                    <Accordion sx={accordionSx}>
+                <Grid item id={"education"} xs={12}>
+                    <Typography variant={"h4"} className="sectionHeadings">Education</Typography>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"codeup-education-content"}
                             id={"codeup"}
                         >
                             <div>
-                                <Typography sx={accordionTitle} className={"block"}>CodeUp</Typography>
-                                <Typography sx={accordionSubtitle} className={"block"}>Full Stack Web Design</Typography>
+                                <Typography className="accordion-title block" >CodeUp</Typography>
+                                <Typography className="accordion-subtitle block" >Full Stack Web Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -343,14 +338,14 @@ export default function Resume(props){
                                 A fully-immersive, project-based, and intensive 20-week Full-Stack Java Career Accelerator that provides students with 670 hours of expert instruction in software development</Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"smu-education-content"}
                             id={"smu"}>
                             <div>
-                                <Typography sx={accordionTitle}>St. Martin's University</Typography>
-                                <Typography sx={accordionSubtitle}>Cloud Application Design</Typography>
+                                <Typography className="accordion-title">St. Martin's University</Typography>
+                                <Typography className="accordion-subtitle">Cloud Application Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -361,14 +356,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"mssa-education-content"}
                             id={"mssa"}>
                             <div>
-                                <Typography sx={accordionTitle}>Microsoft Software and Systems Academy</Typography>
-                                <Typography sx={accordionSubtitle}>Cloud Application Design</Typography>
+                                <Typography className="accordion-title">Microsoft Software and Systems Academy</Typography>
+                                <Typography className="accordion-subtitle">Cloud Application Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -378,14 +373,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"uw-education-content"}
                             id={"uw"}>
                             <div>
-                                <Typography sx={accordionTitle}>University of Washington</Typography>
-                                <Typography sx={accordionSubtitle}>BS in Electrical Engineering</Typography>
+                                <Typography className="accordion-title">University of Washington</Typography>
+                                <Typography className="accordion-subtitle">BS in Electrical Engineering</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -395,14 +390,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"wsu-education-content"}
                             id={"wsu"}>
                             <div>
-                                <Typography sx={accordionTitle}>Washington State University</Typography>
-                                <Typography sx={accordionSubtitle}>BM in Music Performance</Typography>
+                                <Typography className="accordion-title">Washington State University</Typography>
+                                <Typography className="accordion-subtitle">BM in Music Performance</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -429,37 +424,37 @@ export default function Resume(props){
 5. tech skills
 6. certifications*/}
                 <Grid item xs={12} id={"resumeContact"}>
-                    <Typography variant={'h4'} sx={sectionHeadings}>Contact</Typography>
+                    <Typography variant={'h4'} className="sectionHeadings">Contact</Typography>
                     {/*Contact Section*/}
-                    <Card sx={accordionSx}>
-                        <Typography sx={contactSx} id={"resumeContactPhone"} className="block">
+                    <Card className="accordion-sx">
+                        <Typography className="text-box block" id={"resumeContactPhone"} >
                             <FaPhoneSquare/> (360)606-8381
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactEmail"} className="block">
+                        <Typography className="text-box block" id={"resumeContactEmail"} >
                             <MdEmail/> <Mailto email={"MilesRaker@gmail.com"} subject={"Portfolio Response"} body={"Dear Miles,\n\n\n<sent from web portfolio link>"}>MilesRaker@gmail.com</Mailto>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactLinkedIn"} className="block">
+                        <Typography className="text-box block" id={"resumeContactLinkedIn"} >
                             <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} target={"_blank"} rel={"noreferrer"}>LinkedIn / MilesRaker</a>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactGitHub"} className="block">
+                        <Typography className="text-box block" id={"resumeContactGitHub"} >
                             <FaGithubSquare/> <a href="https://github.com/MilesRaker" target={"_blank"} rel={"noreferrer"}>GitHub / MilesRaker</a>
                         </Typography>
-                        <Typography sx={contactSx} id={"resumeContactWebsite"} className="block">
+                        <Typography className="text-box block" id={"resumeContactWebsite"} >
                             <TfiWorld/> <a href="https://www.MilesRaker.com" target={"_blank"} rel={"noreferrer"}>MilesRaker.com</a>
                         </Typography>
                     </Card>
                 </Grid>
                 {/*Professional Experience Section*/}
-                <Grid xs={12}  id={"professionalExperience"}>
-                    <Typography variant={"h4"} sx={sectionHeadings}>Professional Experience</Typography>
+                <Grid  item xs={12}  id={"professionalExperience"}>
+                    <Typography variant={"h4"} className="sectionHeadings">Professional Experience</Typography>
 
-                    <Accordion sx={accordionSx} id={"SMUInternship"}>
+                    <Accordion className="accordion-sx" id={"SMUInternship"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"smuInternship"}
                                           id={"smuInternship"}>
                             <div>
-                                <Typography sx={accordionTitle}>Saint Martin's University - Lacey, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
+                                <Typography className="accordion-title">Saint Martin's University - Lacey, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -471,13 +466,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"FAA"}>
+                    <Accordion className="accordion-sx" id={"FAA"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"FAA"}
                                           id={"FAASummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>Federal Aviation Administration - Des Moines, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
+                                <Typography className="accordion-title">Federal Aviation Administration - Des Moines, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -492,13 +487,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"WANG"}>
+                    <Accordion className="accordion-sx" id={"WANG"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"WANG"}
                                           id={"WANGSummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>US Army National Guard - Camp Murray, WA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
+                                <Typography className="accordion-title">US Army National Guard - Camp Murray, WA</Typography>
+                                <Typography className="accordion-subtitle"><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -519,13 +514,13 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion sx={accordionSx} id={"Army"}>
+                    <Accordion className="accordion-sx" id={"Army"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"Army"}
                                           id={"ArmySummary"}>
                             <div>
-                                <Typography sx={accordionTitle}>US Army - Seoul, South Korea; Newport News, VA</Typography>
-                                <Typography sx={accordionSubtitle}><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
+                                <Typography className="accordion-title">US Army - Seoul, South Korea; Newport News, VA</Typography>
+                                <Typography className="accordion-subtitle"><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -541,24 +536,24 @@ export default function Resume(props){
                     </Accordion>
                 </Grid>
                 {/* security clearance*/}
-                <Grid id={"clearance"} xs={12} >
-                    <Typography variant={"h4"} sx={sectionHeadings}>Security Clearance</Typography>
-                    <Card sx={clearanceSx}>
-                        <Typography sx={accordionTitle}>US Government Secret Security Clearance, Inactive</Typography>
+                <Grid item id={"clearance"} xs={12} >
+                    <Typography variant={"h4"} className="sectionHeadings">Security Clearance</Typography>
+                    <Card className="text-box">
+                        <Typography className="accordion-title">US Government Secret Security Clearance, Inactive</Typography>
                     </Card>
                 </Grid>
                 {/* education */}
                 <Grid id={"education"} xs={12}>
-                    <Typography variant={"h4"} sx={sectionHeadings}>Education</Typography>
-                    <Accordion sx={accordionSx}>
+                    <Typography variant={"h4"} className="sectionHeadings">Education</Typography>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"codeup-education-content"}
                             id={"codeup"}
                         >
                             <div>
-                                <Typography sx={accordionTitle} className={"block"}>CodeUp</Typography>
-                                <Typography sx={accordionSubtitle} className={"block"}>Full Stack Web Design</Typography>
+                                <Typography className="accordion-title block" >CodeUp</Typography>
+                                <Typography className="accordion-subtitle block" >Full Stack Web Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -568,14 +563,14 @@ export default function Resume(props){
                                 A fully-immersive, project-based, and intensive 20-week Full-Stack Java Career Accelerator that provides students with 670 hours of expert instruction in software development</Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"smu-education-content"}
                             id={"smu"}>
                             <div>
-                                <Typography sx={accordionTitle}>St. Martin's University</Typography>
-                                <Typography sx={accordionSubtitle}>Cloud Application Design</Typography>
+                                <Typography className="accordion-title">St. Martin's University</Typography>
+                                <Typography className="accordion-subtitle">Cloud Application Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -586,14 +581,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"mssa-education-content"}
                             id={"mssa"}>
                             <div>
-                                <Typography sx={accordionTitle}>Microsoft Software and Systems Academy</Typography>
-                                <Typography sx={accordionSubtitle}>Cloud Application Design</Typography>
+                                <Typography className="accordion-title">Microsoft Software and Systems Academy</Typography>
+                                <Typography className="accordion-subtitle">Cloud Application Design</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -603,14 +598,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"uw-education-content"}
                             id={"uw"}>
                             <div>
-                                <Typography sx={accordionTitle}>University of Washington</Typography>
-                                <Typography sx={accordionSubtitle}>BS in Electrical Engineering</Typography>
+                                <Typography className="accordion-title">University of Washington</Typography>
+                                <Typography className="accordion-subtitle">BS in Electrical Engineering</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -620,14 +615,14 @@ export default function Resume(props){
                             </Typography>
                         </AccordionDetails>
                     </Accordion>
-                    <Accordion sx={accordionSx}>
+                    <Accordion className="accordion-sx">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls={"wsu-education-content"}
                             id={"wsu"}>
                             <div>
-                                <Typography sx={accordionTitle}>Washington State University</Typography>
-                                <Typography sx={accordionSubtitle}>BM in Music Performance</Typography>
+                                <Typography className="accordion-title">Washington State University</Typography>
+                                <Typography className="accordion-subtitle">BM in Music Performance</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -638,8 +633,8 @@ export default function Resume(props){
                         </AccordionDetails>
                     </Accordion>
                     {/* technical skills */}
-                    <Grid xs={12}>
-                        <Typography variant={"h4"} sx={sectionHeadings}>Technical Skills</Typography>
+                    <Grid item xs={12}>
+                        <Typography variant={"h4"} className="sectionHeadings">Technical Skills</Typography>
 
                         <Box sx={{ width: '100%', maxWidth: 360, bgcolor: customTheme.palette.primary.light }}>
                             <List sx={{
@@ -652,54 +647,54 @@ export default function Resume(props){
                                 '& ul': { padding: 0 },
                                 paddingTop: 0,
                             }}>
-                                <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}  >Frameworks:</Typography></ListSubheader>
+                                <ListSubheader className="scroll-header-sx"><Typography variant={'h6'}  >Frameworks:</Typography></ListSubheader>
                                 {renderRows(frameworks)}
-                                <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>Programming Languages: </Typography></ListSubheader>
+                                <ListSubheader className="scroll-header-sx"><Typography variant={'h6'}>Programming Languages: </Typography></ListSubheader>
                                 {renderRows(languages)}
-                                <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>Knowledge: </Typography></ListSubheader>
+                                <ListSubheader className="scroll-header-sx"><Typography variant={'h6'}>Knowledge: </Typography></ListSubheader>
                                 {renderRows(knowledge)}
-                                <ListSubheader sx={scrollHeaderSx}><Typography variant={'h6'}>API's: </Typography></ListSubheader>
+                                <ListSubheader className="scroll-header-sx"><Typography variant={'h6'}>API's: </Typography></ListSubheader>
                                 {renderRows(api)}
                             </List>
                         </Box>
                     </Grid>
                     {/* certifications */}
-                    <Grid id={"certifications"} xs={12} >
-                        <Typography variant={"h4"} sx={sectionHeadings}>Certifications</Typography>
+                    <Grid item id={"certifications"} xs={12} >
+                        <Typography variant={"h4"} className="sectionHeadings">Certifications</Typography>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>AWS Cloud Practitioner</Typography>
-                            <Typography sx={accordionSubtitle}>Amazon Web Services</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">AWS Cloud Practitioner</Typography>
+                            <Typography className="accordion-subtitle">Amazon Web Services</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>Azure Fundamentals</Typography>
-                            <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">Azure Fundamentals</Typography>
+                            <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>Azure Data Fundamentals</Typography>
-                            <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">Azure Data Fundamentals</Typography>
+                            <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>Azure AI Fundamentals</Typography>
-                            <Typography sx={accordionSubtitle}>Microsoft Certified</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">Azure AI Fundamentals</Typography>
+                            <Typography className="accordion-subtitle">Microsoft Certified</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>Linux Essentials</Typography>
-                            <Typography sx={accordionSubtitle}>Linux Professional Institute</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">Linux Essentials</Typography>
+                            <Typography className="accordion-subtitle">Linux Professional Institute</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>CompTIA ITF+:</Typography>
-                            <Typography sx={accordionSubtitle}>CompTIA</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">CompTIA ITF+:</Typography>
+                            <Typography className="accordion-subtitle">CompTIA</Typography>
                         </Card>
 
-                        <Card sx={accordionSx}>
-                            <Typography sx={accordionTitle}>Electrical Engineer in Training</Typography>
-                            <Typography sx={accordionSubtitle}>Washington State License Board</Typography>
+                        <Card className="accordion-sx">
+                            <Typography className="accordion-title">Electrical Engineer in Training</Typography>
+                            <Typography className="accordion-subtitle">Washington State License Board</Typography>
                         </Card>
                     </Grid>
                 </Grid>
