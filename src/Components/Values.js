@@ -5,38 +5,6 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import React from 'react';
 import './Values.css';
-import customTheme from "./ThemeProvider";
-
-const accordionTitle = {
-    fontFamily: 'Varela',
-    fontWeight: 'bold',
-    paddingLeft: 1,
-    textDecoration: 'underline',
-    textDecorationColor: customTheme.palette.secondary.main
-}
-
-const accordionSubtitle = {
-    fontFamily: 'Varela',
-    fontStyle: 'italic',
-    color: 'black',
-    paddingLeft: 1
-}
-
-const accordionSx = {
-    background: 'linear-gradient(to bottom, #FAFAFA, #42A5F5)',
-    margin: 1,
-    borderRadius: 1
-}
-
-const ColorRule = ({ color }) => (
-    <hr
-        style = {{
-            borderColor: color,
-        }}
-        />
-);
-
-
 
 export default function Values(){
     return(
@@ -47,10 +15,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Authentic</Typography>
+                    <Typography variant='button' className="accordion-title">Authentic</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' sx={accordionSubtitle}>I present my true self to the world. I speak my truth.</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className="accordion-values-content">I present my true self to the world. I speak my truth.</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -58,10 +26,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Curious</Typography>
+                    <Typography variant='button' className="accordion-title">Curious</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' className='description'>I view the world through eager wonder</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className='accordion-values-content'>I view the world through eager wonder</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -69,10 +37,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Kind</Typography>
+                    <Typography variant='button' className="accordion-title">Kind</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' className='description'>I am friendly, generous and considerate</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className='accordion-values-content'>I am friendly, generous and considerate</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -80,10 +48,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Empathetic</Typography>
+                    <Typography variant='button' className="accordion-title">Empathetic</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' className='description'>I acknowledge the emotions of others without actively experiencing their emotions</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className='accordion-values-content'>I acknowledge the emotions of others without actively experiencing their emotions</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -91,10 +59,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Playful</Typography>
+                    <Typography variant='button' className="accordion-title">Playful</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' className='description'>I give and express joy, I'm a goofball</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className='accordion-values-content'>I give and express joy, I'm a goofball</Typography>
                 </AccordionDetails>
             </Accordion>
 
@@ -102,10 +70,10 @@ export default function Values(){
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                 >
-                    <Typography variant='button' sx={accordionTitle}>Self-confident</Typography>
+                    <Typography variant='button' className="accordion-title">Self-confident</Typography>
                 </AccordionSummary>
-                <AccordionDetails sx={accordionSx}>
-                    <Typography variant='body1' className='description'>I can learn anything I need to be successful</Typography>
+                <AccordionDetails className="accordion-sx">
+                    <Typography variant='body1' className='accordion-values-content'>I can learn anything I need to be successful</Typography>
                 </AccordionDetails>  
             </Accordion>
 

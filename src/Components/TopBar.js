@@ -66,7 +66,7 @@ class TopBar extends Component{
                             {styles.showFullName ? (
                                 <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
                             ) : (
-                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' variant='h1'>Raker</Typography>
+                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='center' variant='h1'>Raker</Typography>
                             )}
                         </Container>
                         <Container>
@@ -76,24 +76,30 @@ class TopBar extends Component{
                                     <Mailto>MilesRaker@gmail.com</Mailto> | (360) 606-8381
                                 </Typography>
                                 <Typography align='center' sx={{pl: 2, fontFamily: 'Varela', pb: 1}} noWrap='true' variant='subtitle1'>
-                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a><FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
+                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a>
+                                    <FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
+                                    <span style={{paddingLeft: 10}}>Secret Clearance (Inactive)</span>
                                 </Typography>
                             </div>
                             ) : (
                             <div>
-                                <Typography align='center'  noWrap='true' variant='subtitle1'>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
                                     <Mailto>MilesRaker@gmail.com</Mailto>
                                 </Typography>
-                                <Typography align='center'  noWrap='true' variant='subtitle1'>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
                                     (360) 606-8381
                                 </Typography>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
+                                    Secret Clearance (Inactive)
+                                </Typography>
                                 <Typography align='center' sx={{pl: 2, fontFamily: 'Varela', pb: 1}} noWrap='true' variant='subtitle1'>
-                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a><FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
+                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a>
+                                    <FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
                                 </Typography>
                             </div>
                             )}
-                            {/* use these two lines to debug responsiveness
-                            <Typography>Window Width: {windowWidth}</Typography>
+                            {/* use these two lines to debug responsiveness */}
+                            {/*<Typography>Window Width: {windowWidth}</Typography>
                             <Typography>Window Height: {windowHeight}</Typography>*/}
                         </Container>
                         {styles.showHorizontalTabsBelow ? <NavTabsHorizontal /> : null}

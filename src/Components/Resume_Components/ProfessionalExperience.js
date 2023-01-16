@@ -17,7 +17,7 @@ const  ProfessionalExperience = (props) => {
                                       id={"smuInternship"}>
                         <div>
                             <Typography className="accordion-title">Saint Martin's University - Lacey, WA</Typography>
-                            <Typography className="accordion-subtitle"><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
+                            <Typography className="accordion-values-content"><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
                         </div>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -35,7 +35,7 @@ const  ProfessionalExperience = (props) => {
                                       id={"FAASummary"}>
                         <div>
                             <Typography className="accordion-title">Federal Aviation Administration - Des Moines, WA</Typography>
-                            <Typography className="accordion-subtitle"><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
+                            <Typography className="accordion-values-content"><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
                         </div>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -56,7 +56,7 @@ const  ProfessionalExperience = (props) => {
                                       id={"WANGSummary"}>
                         <div>
                             <Typography className="accordion-title">US Army National Guard - Camp Murray, WA</Typography>
-                            <Typography className="accordion-subtitle"><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
+                            <Typography className="accordion-values-content"><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
                         </div>
                     </AccordionSummary>
                     <AccordionDetails>
@@ -83,7 +83,7 @@ const  ProfessionalExperience = (props) => {
                                       id={"ArmySummary"}>
                         <div>
                             <Typography className="accordion-title">US Army - Seoul, South Korea; Newport News, VA</Typography>
-                            <Typography className="accordion-subtitle"><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
+                            <Typography className="accordion-values-content"><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
                         </div>
                     </AccordionSummary>
                     <AccordionDetails>

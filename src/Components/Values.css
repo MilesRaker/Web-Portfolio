@@ -1,9 +1,10 @@
+@import url("./Utility/Theme.css");
+
 .description{
     padding-left: 4em;
     margin-bottom: 1em;
 }
 .label{
-
     padding-left: 1em;
     font-weight: bold;
 }
@@ -14,4 +15,22 @@
 .valuesContainer{
     padding-left: 1em;
     max-width: 800px;
+}
+.accordion-title {
+    font-family: 'Varela', serif;
+    font-weight: bold;
+    padding-left: 1px;
+    text-decoration: underline;
+    text-decoration-color: var(--secondary-main);
+}
+
+.accordion-values-content {
+    font-family: 'Varela', serif;
+    font-style: italic;
+    padding-left: 1px;
+}
+
+.accordion-sx {
+    margin: 1px;
+    border-radius: 1px;
 }
