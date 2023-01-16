@@ -5,6 +5,9 @@ import Logo from './Logo.png';
 import NavTabsVertical from './NavTabsVertical';
 import NavTabsHorizontal from './NavTabsHorizontal';
 import customTheme from "./ThemeProvider";
+import Mailto from "./Utility/Mailto";
+import {BsLinkedin} from "react-icons/bs";
+import {FaGithubSquare} from "react-icons/fa";
 
 class TopBar extends Component{
 
@@ -68,18 +71,26 @@ class TopBar extends Component{
                         </Container>
                         <Container>
                         {styles.showFullName ? (
-                            <Typography align='left' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
-                                <a href={"mailto:milesraker@gmail.com"}>MilesRaker@gmail.com</a> | (360) 606-8381
-                            </Typography>
+                            <div>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
+                                    <Mailto>MilesRaker@gmail.com</Mailto> | (360) 606-8381
+                                </Typography>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela', pb: 1}} noWrap='true' variant='subtitle1'>
+                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a><FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
+                                </Typography>
+                            </div>
                             ) : (
-                            <Container>
+                            <div>
                                 <Typography align='center'  noWrap='true' variant='subtitle1'>
-                                    <a href={"mailto:milesraker@gmail.com"}>MilesRaker@gmail.com</a>
+                                    <Mailto>MilesRaker@gmail.com</Mailto>
                                 </Typography>
                                 <Typography align='center'  noWrap='true' variant='subtitle1'>
                                     (360) 606-8381
                                 </Typography>
-                            </Container>
+                                <Typography align='center' sx={{pl: 2, fontFamily: 'Varela', pb: 1}} noWrap='true' variant='subtitle1'>
+                                    <BsLinkedin/> <a href={"https://www.linkedin.com/in/milesraker/"} style={{paddingRight: 10}} target={"_blank"} >LinkedIn</a><FaGithubSquare style={{paddingLeft: 10}}/> <a href="https://github.com/MilesRaker"  target={"_blank"} >GitHub</a>
+                                </Typography>
+                            </div>
                             )}
                             {/* use these two lines to debug responsiveness
                             <Typography>Window Width: {windowWidth}</Typography>

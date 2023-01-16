@@ -1,0 +1,19 @@
+:root {
+    --primary-light: #80d6ff;
+    --primary-main: #42A5F5;
+    --primary-dark: #0077c2;
+    --secondary-light: #ffea80;
+    --secondary-main: #FDB850;
+    --secondary-dark: #c6881e;
+    --accent-light: #C298F9;
+    --accent-main: #9342F5;
+    --accent-dark: #7000EB;
+    --grey-light: #ffffff;
+    --grey-main: #FAFAFA;
+    --grey-dark: #c7c7c7;
+    --typography-varela: Varela;
+    --typography-quattro: Quattrocento Sans;
+    --transitions-duration-shortest: 150ms;
+    --transitions-duration-shorter: 200ms;
+    --transitions-duration-short: 250ms;
+}
