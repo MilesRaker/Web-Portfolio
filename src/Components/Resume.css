@@ -1,9 +1,44 @@
 /* Style sheet for Resume_Components directory and Resume.js*/
+/* CSS layer organization:
+    #top-level-container
+        .routes
+            .resume-container
+                .resume-left-column
+                    .resume-section
+                        .resume-item
+                            .certification (atomic)
+                            .technical-skills-accordion
+                                .accordion-title (atomic)
+                            .technical-skills-accordion-details (atomic)
 
+                .resume-right-column
+                    .resume-section
+                        .resume-item
+                            .pro-exp-accordion
+                                .accordion-title (atomic)
+                                .accordion-subtitle (atomic)
+                            .pro-exp-accordion-details (atomic)
+                            .education-accordion
+                                .accordion-title (atomic)
+                                .accordion-subtitle (atomic
+                            .education-accordion-details (atomic)
+
+                .top-bar
+                    .top-bar-logo
+                    .top-bar-name
+        */
 @import url("./Utility/Theme.css");
 
 #resumeHeader{
     display: block;
+}
+card{
+    padding: 0 16px;
+}
+
+#top-level-container{
+    margin: 0;
+    padding: 0;
 }
 
 .accordion-title {
@@ -19,29 +54,9 @@
     padding-left: 1em;
 }
 
-.accordion-sx {
-    font-family: 'Varela', serif;
-    margin: 1em;
-    width: 100%;
-}
 
-.block{
-    display: block;
-}
-
-.box {
-    width: 100%;
-    max-width: 360px;
-    margin: 1em;
-    padding: 1em;
-}
-
-.boxShadow{
-    box-shadow: 10px 10px 5px ;
-}
-
-.centeredText{
-    text-align: center;
+.certification{
+    padding: 4px 0;
 }
 
 .clearance-sx {
@@ -53,6 +68,7 @@
     border-radius: 5px;
     margin: 0;
     padding: 1em;
+    justify-content: center;
 }
 
 .contact-sx {
@@ -61,13 +77,20 @@
     margin-right: .5em;
 }
 
-.inline{
-    display: inline;
-}
-
 .resumeContainer{
+    margin-top: 40px !important;
     display: flex;
     width: 100%;
+}
+
+.resume-section{
+    margin: 0 3em !important;
+}
+
+.resume-item {
+    font-family: 'Varela', serif;
+    margin: 10px !important;
+    padding: 16px 25px;
 }
 
 .sectionHeadings{
@@ -79,28 +102,8 @@
     padding-right: 1em;
 }
 
-.scroll-sx {
-    color: black;
-    font-family: 'Varela', serif;
-    margin-left: .5em;
-    margin-right: .5em;
-    border-radius: 1em;
-}
-
-.scroll-header-sx{
-    margin-top: 0;
-    padding-top: 0;
-    margin-bottom: 1em;
-    border-radius: 1px;
-    font-family: 'Quattrocento Sans', sans-serif;
-    font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: var(--secondary-main);
-}
-
-.text-box {
-    font-family: 'Varela', serif;
-    margin: 1em;
+.top-bar-logo{
+    height: 40px;
 }
 
 .list {
