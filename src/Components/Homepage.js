@@ -1,10 +1,10 @@
 import {Card, Paper, Stack, Typography} from '@mui/material';
 import React, {useState} from 'react';
 import './Homepage.css';
-import NavTabsHorizontal from "./NavTabsHorizontal";
+import NavTabsHorizontal from "./Navigation_Components/NavTabsHorizontal";
 import useWindowDimensions from "./useWindowDimensions";
 import customTheme from "./ThemeProvider";
-import NavTabsVertical from "./NavTabsVertical";
+import NavTabsVertical from "./Navigation_Components/NavTabsVertical";
 
 
 

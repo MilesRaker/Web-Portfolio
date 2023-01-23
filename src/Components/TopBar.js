@@ -2,12 +2,10 @@ import { AppBar, Container, Stack, Toolbar, Typography } from '@mui/material';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo.png';
-import NavTabsVertical from './NavTabsVertical';
-import NavTabsHorizontal from './NavTabsHorizontal';
+import NavTabsVertical from './Navigation_Components/NavTabsVertical';
+import NavTabsHorizontal from './Navigation_Components/NavTabsHorizontal';
 import customTheme from "./ThemeProvider";
-import Mailto from "./Utility/Mailto";
-import {BsLinkedin} from "react-icons/bs";
-import {FaGithubSquare} from "react-icons/fa";
+
 
 class TopBar extends Component{
 
@@ -52,24 +50,25 @@ class TopBar extends Component{
 
         return(
 
-            <AppBar position={styles.stickyPosition?'sticky':'relative'} sx={{backgroundColor: customTheme.palette.grey.A200, minWidth: 300}}>
+            <AppBar position={styles.stickyPosition?'sticky':'relative'} className={"top-bar"} sx={{backgroundColor: customTheme.palette.grey.A200, minWidth: 300}}>
                 <Toolbar >
 
                     {styles.showHorizontalTabsBelow?null : (
-                    <Link to='/'>
-                        <img src={Logo} height="75" alt='Rocket Idea Logo' />
-                    </Link>
+                        <Link to='/'>
+                            <img src={Logo} className={"top-bar-logo"} alt='Rocket Idea Logo' />
+                        </Link>
                     )}
 
                     <Stack>
                         <Container>
                             {styles.showFullName ? (
-                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
+                                <Typography className={"top-bar-name"} sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='left' noWrap='true' variant='h1'>Miles Raker</Typography>
                             ) : (
-                                <Typography sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='center' variant='h1'>Raker</Typography>
+                                <Typography className={"top-bar-name"} sx={{textDecoration: 'underline', textDecorationColor: customTheme.palette.secondary.main}} align='center' variant='h1'>Raker</Typography>
                             )}
                         </Container>
-                        <Container>
+
+                        {/* <Container>
                         {styles.showFullName ? (
                             <div>
                                 <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
@@ -98,10 +97,11 @@ class TopBar extends Component{
                                 </Typography>
                             </div>
                             )}
-                            {/* use these two lines to debug responsiveness */}
-                            {/*<Typography>Window Width: {windowWidth}</Typography>
-                            <Typography>Window Height: {windowHeight}</Typography>*/}
-                        </Container>
+                             use these two lines to debug responsiveness
+                            <Typography>Window Width: {windowWidth}</Typography>
+                            <Typography>Window Height: {windowHeight}</Typography>
+                        </Container>*/}
+
                         {styles.showHorizontalTabsBelow ? <NavTabsHorizontal /> : null}
                     </Stack>
                     
