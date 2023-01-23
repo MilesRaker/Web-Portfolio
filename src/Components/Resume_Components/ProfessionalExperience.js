@@ -10,14 +10,14 @@ const  ProfessionalExperience = (props) => {
 
             <Grid item xs={12}  id={"professionalExperience"} className={"resume-section"}>
                 <Typography variant={"h4"} className="sectionHeadings">Professional Experience</Typography>
-                <div className="resume-item">
-                    <Accordion  className={"pro-exp-accordion"}  id={"SMUInternship"}>
+
+                    <Accordion  className={"resume-item"}  id={"SMUInternship"}>
                         <AccordionSummary className={"pro-exp-accordion"} expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"smuInternship"}
                                           id={"smuInternship"}>
                             <div>
-                                <Typography className="accordion-title">Saint Martin's University - Lacey, WA</Typography>
-                                <Typography className="accordion-subtitle"><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
+                                <Typography className= {"accordion-title"}>Saint Martin's University - Lacey, WA</Typography>
+                                <Typography className= {"accordion-subtitle"}><em>Full Stack Engineering Intern</em> / Jan 2022 - May 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails className={"pro-exp-accordion-details"}>
@@ -29,13 +29,13 @@ const  ProfessionalExperience = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion  className={"pro-exp-accordion"} id={"FAA"}>
+                    <Accordion  className={"resume-item"} id={"FAA"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"FAA"}
                                           id={"FAASummary"}>
                             <div>
-                                <Typography className="accordion-title">Federal Aviation Administration - Des Moines, WA</Typography>
-                                <Typography className="accordion-subtitle"><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
+                                <Typography className= {"accordion-title"}>Federal Aviation Administration - Des Moines, WA</Typography>
+                                <Typography className= {"accordion-subtitle"}><em>Electronics Engineer</em> / Sep 2019 - Jan 2021</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails className={"pro-exp-accordion-details"}>
@@ -50,13 +50,13 @@ const  ProfessionalExperience = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion className={"pro-exp-accordion"} id={"WANG"}>
+                    <Accordion className={"resume-item"} id={"WANG"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"WANG"}
                                           id={"WANGSummary"}>
                             <div>
-                                <Typography className="accordion-title">US Army National Guard - Camp Murray, WA</Typography>
-                                <Typography className="accordion-subtitle"><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
+                                <Typography className= {"accordion-title"}>US Army National Guard - Camp Murray, WA</Typography>
+                                <Typography className= {"accordion-subtitle"}><em>Musician, Sergeant</em> / Feb 2016 - Jan 2022</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails className={"pro-exp-accordion-details"}>
@@ -77,13 +77,13 @@ const  ProfessionalExperience = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion className={"pro-exp-accordion"} id={"Army"}>
+                    <Accordion className={"resume-item"} id={"Army"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"Army"}
                                           id={"ArmySummary"}>
                             <div>
-                                <Typography className="accordion-title">US Army - Seoul, South Korea; Newport News, VA</Typography>
-                                <Typography className="accordion-subtitle"><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
+                                <Typography className= {"accordion-title"}>US Army - Seoul, South Korea; Newport News, VA</Typography>
+                                <Typography className= {"accordion-subtitle"}><em>Musician, Specialist</em> / Apr 2009 - Feb 2016</Typography>
                             </div>
                         </AccordionSummary>
                         <AccordionDetails className={"pro-exp-accordion-details"}>
@@ -97,7 +97,7 @@ const  ProfessionalExperience = (props) => {
                             </ul>
                         </AccordionDetails>
                     </Accordion>
-                </div>
+
             </Grid>
     );
 }

@@ -17,7 +17,7 @@ export default function Resume(props){
     if(width > 1010){
         // for large screens, use two columns
     return(
-            <Grid container spacing={2} className="resumeContainer">
+            <Grid container spacing={2} className="resume-container">
                 <Grid container xs={4} spacing={2} id={"resumeLeftColumn"} className="column" >
                     <Certifications/>
                     <TechnicalSkills/>

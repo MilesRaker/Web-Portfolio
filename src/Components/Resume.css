@@ -77,14 +77,15 @@ card{
     margin-right: .5em;
 }
 
-.resumeContainer{
+.resume-container{
     margin-top: 40px !important;
     display: flex;
     width: 100%;
 }
 
 .resume-section{
-    margin: 0 3em !important;
+    margin-left: 25px !important;
+    width: 90% !important;
 }
 
 .resume-item {
@@ -98,8 +99,7 @@ card{
     text-decoration: underline;
     text-decoration-color: var(--secondary-main);
     font-weight: bold;
-    padding-left: 2em;
-    padding-right: 1em;
+    padding-left: 40px;
 }
 
 .top-bar-logo{

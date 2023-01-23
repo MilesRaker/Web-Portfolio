@@ -9,8 +9,8 @@ const  TechnicalSkills = (props) => {
     return(
             <Grid item xs={12} id={"technicalSkills"} className={"resume-section"}>
                 <Typography variant={"h4"} className="sectionHeadings">Technical Skills</Typography>
-                <div className={"resume-item"}>
-                    <Accordion className={"technical-skills-accordion"} id={"frameworkAccordion"}>
+
+                    <Accordion className={"resume-item"} id={"frameworkAccordion"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"frameworks"}
                                           id={"frameworkSummary"}>
@@ -27,7 +27,7 @@ const  TechnicalSkills = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion className={"technical-skills-accordion"}  id={"languagesAccordion"}>
+                    <Accordion className={"resume-item"}  id={"languagesAccordion"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"languages"}
                                           id={"languagesSummary"}>
@@ -47,7 +47,7 @@ const  TechnicalSkills = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion className={"technical-skills-accordion"}  id={"knowledgeAccordion"}>
+                    <Accordion className={"resume-item"}  id={"knowledgeAccordion"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"knowledge"}
                                           id={"knowledgeSummary"}>
@@ -71,7 +71,7 @@ const  TechnicalSkills = (props) => {
                         </AccordionDetails>
                     </Accordion>
 
-                    <Accordion className={"technical-skills-accordion"}  id={"apiAccordion"}>
+                    <Accordion className={"resume-item"}  id={"apiAccordion"}>
                         <AccordionSummary expandIcon={<ExpandMoreIcon />}
                                           aria-controls={"api"}
                                           id={"apiSummary"}>
@@ -89,7 +89,7 @@ const  TechnicalSkills = (props) => {
                             </ul>
                         </AccordionDetails>
                     </Accordion>
-                </div>
+
             </Grid>
     );
 }
