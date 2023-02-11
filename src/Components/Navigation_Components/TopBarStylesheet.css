@@ -1,0 +1,20 @@
+
+@import url("../Utility/Theme.css");
+
+.tab{
+    font-family: 'Varela', sans-serif;
+    font-weight: bold;
+}
+
+.tab:hover{
+    font-family: 'Varela', sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: var(--secondary-main);
+}
+
+.tab:hover .tab:active{
+    text-decoration: none !important;
+    color:red;
+}

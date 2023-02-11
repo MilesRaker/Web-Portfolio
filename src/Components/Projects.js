@@ -2,7 +2,6 @@ import {
     Typography,
     Container,
     Card,
-    CardMedia,
     CardContent,
     CardActions,
     Button,
@@ -55,7 +54,7 @@ export default function Projects() {
                         </CardContent>
                         <CardActions>
                             <ButtonGroup variant="contained" aria-label="outlined primary button group" sx={buttonGroupSx}>
-                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('www.milesraker.com')}>Portfolio Homepage</Button>
+                                <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('/')}>Portfolio Homepage</Button>
                                 <Button size="small" sx={buttonSx} variant={"contained"} onClick={() => openWebpageInNewTab('https://github.com/MilesRaker/web-portfolio')}>View on GitHub</Button>
                             </ButtonGroup>
                         </CardActions>

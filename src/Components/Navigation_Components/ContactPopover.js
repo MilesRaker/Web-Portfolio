@@ -1,18 +1,42 @@
 import React from 'react'
-import {Card, Grid, Typography} from "@mui/material";
+import {Card, Popover, Typography} from "@mui/material";
 import {FaGithubSquare, FaPhoneSquare} from "react-icons/fa";
 import {MdEmail} from "react-icons/md";
 import {BsLinkedin} from "react-icons/bs";
 import {TfiWorld} from "react-icons/tfi";
 import Mailto from "../Utility/Mailto"
 
-const  Contact = (props) => {
+const  ContactPopover = (props) => {
+    const [anchorElement, setAnchorElement] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorElement(event.currentTarget);
+    }
+
+    const handleClose = () => {
+        setAnchorElement(null);
+    }
+
+    const open = Boolean(anchorElement);
+    const id = open ? 'simple-popover' : undefined;
+
     return(
         <div>
-            <Grid item xs={12} id={"resumeContact"}>
-                <Typography variant={'h4'} className="sectionHeadings">Contact</Typography>
-
+            <button aria-describedby={id} variant="contained" onClick={handleClick}>
+                Contact
+            </button>
+            <Popover
+                id={contadtPopover}
+                open={open}
+                anchorEl={anchorElement}
+                onClose={handleClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+            >
                 <Card className="text-box">
+                    <Typography variant={'h4'} className="sectionHeadings">Contact</Typography>
                     <Typography className="accordion-title block" id={"resumeContactPhone"} >
                         <FaPhoneSquare/> (360)606-8381
                     </Typography>
@@ -29,9 +53,11 @@ const  Contact = (props) => {
                         <TfiWorld/> <a href="https://www.MilesRaker.com" target={"_blank"} rel={"noreferrer"}>MilesRaker.com</a>
                     </Typography>
                 </Card>
-            </Grid>
+            </Popover>
         </div>
+
+
     );
 }
 
-export default Contact;
+export default ContactPopover;

@@ -5,6 +5,9 @@ import Logo from './Logo.png';
 import NavTabsVertical from './Navigation_Components/NavTabsVertical';
 import NavTabsHorizontal from './Navigation_Components/NavTabsHorizontal';
 import customTheme from "./ThemeProvider";
+import Mailto from "./Utility/Mailto";
+import {BsLinkedin} from "react-icons/bs";
+import {FaGithubSquare} from "react-icons/fa";
 
 
 class TopBar extends Component{
@@ -68,7 +71,7 @@ class TopBar extends Component{
                             )}
                         </Container>
 
-                        {/* <Container>
+                         <Container>
                         {styles.showFullName ? (
                             <div>
                                 <Typography align='center' sx={{pl: 2, fontFamily: 'Varela'}} noWrap='true' variant='subtitle1'>
@@ -97,10 +100,10 @@ class TopBar extends Component{
                                 </Typography>
                             </div>
                             )}
-                             use these two lines to debug responsiveness
+{/*                             use these two lines to debug responsiveness
                             <Typography>Window Width: {windowWidth}</Typography>
-                            <Typography>Window Height: {windowHeight}</Typography>
-                        </Container>*/}
+                            <Typography>Window Height: {windowHeight}</Typography>*/}
+                        </Container>
 
                         {styles.showHorizontalTabsBelow ? <NavTabsHorizontal /> : null}
                     </Stack>
