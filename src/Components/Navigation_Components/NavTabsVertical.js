@@ -72,6 +72,7 @@ export default function NavTabsVertical() {
   const handleMouseLeaveThree= () => {
     setTabThreeSx(nonHoverSx)
   }
+
   return (
     <Box sx={{ height: '100%', alignItems: 'flex-end' }}>
       <Tabs value={currentPage - 1}

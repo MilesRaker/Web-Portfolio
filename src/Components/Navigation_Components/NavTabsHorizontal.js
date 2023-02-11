@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { Link, useLocation } from 'react-router-dom';
 import customTheme from "../ThemeProvider";
+/*import TopBarStylesheet from "./TopBarStylesheet.css";*/
 
 export default function NavTabsHorizontal() {
   // if on the homepage, do not focus a tab
@@ -30,7 +31,6 @@ export default function NavTabsHorizontal() {
         break;
     }
   },[location])
-
   // handle mouse over and mouse leave events:
   const [tabOneSx, setTabOneSx] = useState({fontFamily: 'Varela', fontWeight: 'bold'});
   const [tabTwoSx, setTabTwoSx] = useState({fontFamily: 'Varela', fontWeight: 'bold'});
@@ -42,7 +42,6 @@ export default function NavTabsHorizontal() {
   const hoverSx = {
     fontFamily: 'Varela',
     fontWeight: 'bold',
-    boxShadow: 3,
     textDecoration: 'underline',
     textDecorationThickness: 3,
     textDecorationColor: customTheme.palette.secondary.main
@@ -71,6 +70,13 @@ export default function NavTabsHorizontal() {
   const handleMouseLeaveThree= () => {
     setTabThreeSx(nonHoverSx)
   }
+
+  // handle mouse overs and mouse leaves for the tabs
+/*  const handleMouseOver = (event, newValue) => {
+    console.log(event.target);
+    event.target.className = "tab-hover";
+  }*/
+
   return (
     <Box sx={{ width: '100%' }}>
       <Tabs value={currentPage - 1}
@@ -80,20 +86,24 @@ export default function NavTabsHorizontal() {
       indicatorColor="secondary"
       centered={true}
       >
-        <Tab sx={tabOneSx}
+        <Tab
+            sx={tabOneSx}
              onMouseEnter={handleMouseOverOne}
              onMouseLeave={handleMouseLeaveOne}
              label="Resume" key="Resume" component={Link} to={"/resume"} />
 
-        <Tab sx={tabTwoSx}
+        <Tab
+             sx={tabTwoSx}
              onMouseEnter={handleMouseOverTwo}
              onMouseLeave={handleMouseLeaveTwo}
              label="Values" key="Values" component={Link} to={"/values"} />
 
-        <Tab sx={tabThreeSx}
+        <Tab
+            sx={tabThreeSx}
              onMouseEnter={handleMouseOverThree}
              onMouseLeave={handleMouseLeaveThree}
              label="Projects" key="Projects" component={Link} to={"/projects"} />
+
       </Tabs>
     </Box>
   );
